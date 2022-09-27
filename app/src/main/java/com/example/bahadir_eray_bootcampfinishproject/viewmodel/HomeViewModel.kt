@@ -8,7 +8,6 @@ import com.example.bahadir_eray_bootcampfinishproject.data.model.HotelsModel
 class HomeViewModel : ViewModel() {
     val hotels = MutableLiveData<List<HotelsModel>>()
 
-
     init {
         Log.v("HomeViewModel","Home")
     }
