@@ -75,5 +75,6 @@ dependencies {
 
     implementation "androidx.preference:preference:$preferencesVersion"
 
-
+    //gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
 }
