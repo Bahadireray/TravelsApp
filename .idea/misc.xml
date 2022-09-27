@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/drawable/bottom_corner.xml" value="0.123" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/drawable/home_icon.xml" value="0.1005" />
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/deals_items.xml" value="0.253125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/fragment_detail.xml" value="0.15416666666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/fragment_guide.xml" value="0.15416666666666667" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/fragment_home.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/fragment_home.xml" value="0.4" />
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/fragment_search.xml" value="0.15416666666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/fragment_trip.xml" value="0.15416666666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/menu/bottom_menu.xml" value="0.29028132992327366" />
