@@ -4,9 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.bahadir_eray_bootcampfinishproject.data.model.countries.CountriesModel
-import com.example.bahadir_eray_bootcampfinishproject.data.model.hotels.HotelsModel
 import com.example.bahadir_eray_bootcampfinishproject.service.CountriesService
-import com.example.bahadir_eray_bootcampfinishproject.service.HotelsService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -26,7 +24,6 @@ class SearchViewModel : ViewModel() {
     }
 
     fun getDataFromAPI() {
-
         Log.v("Test", "getDataFrom Search-ViewModel")
         disposable.add(
             countriesService.getCountries()
@@ -34,7 +31,6 @@ class SearchViewModel : ViewModel() {
                 .subscribeWith(object : DisposableSingleObserver<List<CountriesModel>>() {
                     override fun onSuccess(t: List<CountriesModel>) {
                         countriesModel.value = t
-
                     }
 
                     override fun onError(e: Throwable) {

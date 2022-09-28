@@ -1,7 +1,8 @@
 package com.example.bahadir_eray_bootcampfinishproject.data.model.countries
 
+import com.google.gson.annotations.SerializedName
+
 data class CountriesModel(
-    val `data`: List<Data>,
-    val links: List<Link>,
-    val metadata: Metadata
+    @SerializedName("data")
+    val `data`: Data
 )

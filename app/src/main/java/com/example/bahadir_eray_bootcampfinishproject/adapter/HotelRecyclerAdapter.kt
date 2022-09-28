@@ -31,7 +31,7 @@ class HotelRecyclerAdapter(val hotelsList: ArrayList<HotelsModel>) :
     }
 
     override fun getItemCount(): Int {
-        return hotelsList.size
+        return hotelsList.count()
     }
 
     fun updateHotelsList(newHotelsList: List<HotelsModel>) {
