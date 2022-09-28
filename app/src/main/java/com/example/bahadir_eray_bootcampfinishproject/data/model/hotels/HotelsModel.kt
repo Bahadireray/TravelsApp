@@ -1,4 +1,4 @@
-package com.example.bahadir_eray_bootcampfinishproject.data.model
+package com.example.bahadir_eray_bootcampfinishproject.data.model.hotels
 
 data class HotelsModel(
     val featuredImageTrackingDetails: FeaturedImageTrackingDetails,

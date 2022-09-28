@@ -1,17 +1,12 @@
 package com.example.bahadir_eray_bootcampfinishproject.adapter
 
 import android.content.Context
-import android.location.GnssAntennaInfo
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.bahadir_eray_bootcampfinishproject.R
 import com.example.bahadir_eray_bootcampfinishproject.databinding.DealsItemsBinding
-import com.example.bahadir_eray_bootcampfinishproject.data.model.HotelsModel
+import com.example.bahadir_eray_bootcampfinishproject.data.model.hotels.HotelsModel
 
 class HotelRecyclerAdapter(val hotelsList: ArrayList<HotelsModel>) :
     RecyclerView.Adapter<HotelRecyclerAdapter.HotelViewHolder>() {

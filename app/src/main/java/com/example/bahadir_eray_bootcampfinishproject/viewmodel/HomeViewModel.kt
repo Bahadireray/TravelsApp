@@ -3,7 +3,7 @@ package com.example.bahadir_eray_bootcampfinishproject.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.bahadir_eray_bootcampfinishproject.data.model.HotelsModel
+import com.example.bahadir_eray_bootcampfinishproject.data.model.hotels.HotelsModel
 import com.example.bahadir_eray_bootcampfinishproject.service.HotelsService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -25,7 +25,7 @@ class HomeViewModel : ViewModel() {
 
     fun getDataFromAPI() {
 
-        Log.v("Test", "getDataFrom ViewModel")
+        Log.v("Test", "getDataFrom Home-ViewModel")
         disposable.add(
             hotelsService.getHotels()
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())

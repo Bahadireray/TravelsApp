@@ -1,8 +1,7 @@
 package com.example.bahadir_eray_bootcampfinishproject.service
 
-import com.example.bahadir_eray_bootcampfinishproject.data.model.HotelsModel
+import com.example.bahadir_eray_bootcampfinishproject.data.model.hotels.HotelsModel
 import io.reactivex.Single
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
 

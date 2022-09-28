@@ -1,24 +1,17 @@
 package com.example.bahadir_eray_bootcampfinishproject.view.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.adapter.HotelRecyclerAdapter
-import com.example.bahadir_eray_bootcampfinishproject.data.model.HotelsModel
+import com.example.bahadir_eray_bootcampfinishproject.data.model.hotels.HotelsModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentHomeBinding
 import com.example.bahadir_eray_bootcampfinishproject.service.HotelsService
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.HomeViewModel
-
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class HomeFragment : Fragment() {
 
