@@ -24,11 +24,9 @@ class HomeViewModel : ViewModel() {
     }
 
     fun getDataFromAPI() {
-
-        Log.v("Test", "getDataFrom Home-ViewModel")
         disposable.add(
             hotelsService.getHotels()
-                .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<HotelsModel>>() {
                     override fun onSuccess(t: List<HotelsModel>) {
 
@@ -37,7 +35,7 @@ class HomeViewModel : ViewModel() {
                     }
 
                     override fun onError(e: Throwable) {
-                        e.printStackTrace()
+                        Log.v("Home", "Error " + e.localizedMessage)
                     }
 
                 })

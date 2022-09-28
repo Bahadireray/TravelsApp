@@ -24,17 +24,17 @@ class SearchViewModel : ViewModel() {
     }
 
     fun getDataFromAPI() {
-        Log.v("Test", "getDataFrom Search-ViewModel")
         disposable.add(
             countriesService.getCountries()
-                .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<CountriesModel>>() {
                     override fun onSuccess(t: List<CountriesModel>) {
                         countriesModel.value = t
                     }
 
                     override fun onError(e: Throwable) {
-                        e.printStackTrace()
+                        Log.v("Search", "Error " + e.localizedMessage)
                     }
                 })
         )

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.adapter.HotelRecyclerAdapter
@@ -28,8 +29,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        viewModel.getDataFromAPI()
+
     }
 
     override fun onCreateView(
@@ -42,7 +42,16 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+        viewModel.getDataFromAPI()
+        observeLiveData()
+    }
+    private fun observeLiveData() {
+        viewModel.hotels.observe(viewLifecycleOwner, Observer { hotels ->
+            hotels?.let {
+                recyclerViewAdapter?.updateHotelsList(hotels)
+            }
+        })
     }
 
 }
