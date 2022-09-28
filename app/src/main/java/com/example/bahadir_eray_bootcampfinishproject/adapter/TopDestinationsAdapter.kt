@@ -23,6 +23,7 @@ class TopDestinationsAdapter(var countriesList: ArrayList<CountriesModel>) :
     }
 
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
+        
     }
 
     override fun getItemCount(): Int {

@@ -10,6 +10,6 @@ interface CountriesAPI {
         "X-RapidAPI-Key:" + "f731e4a216mshb17ea1868f5fe68p1254ccjsna3933ca79145",
         "X-RapidAPI-Host:" + "wft-geo-db.p.rapidapi.com"
     )
-    @GET("v1/geo/countries")
+    @GET("v1/geo/countries/US")
     fun getCountriesData(): Single<List<CountriesModel>>
 }
