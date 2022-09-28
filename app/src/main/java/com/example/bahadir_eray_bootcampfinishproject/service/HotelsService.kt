@@ -1,6 +1,7 @@
 package com.example.bahadir_eray_bootcampfinishproject.service
 
 import com.example.bahadir_eray_bootcampfinishproject.data.model.HotelsModel
+import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -16,7 +17,7 @@ class HotelsService {
         .build()
         .create(HotelsAPI::class.java)
 
-    fun getHotels(): Call<ArrayList<HotelsModel>> {
+    fun getHotels(): Single<List<HotelsModel>> {
         return api.getData()
     }
 }
