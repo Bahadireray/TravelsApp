@@ -40,12 +40,12 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel = ViewModelProviders.of(this).get(SearchViewModel::class.java)
-        viewModel.getDataFromAPI()
+        viewModel.refreshData()
 
         observeLiveData()
         binding.topRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-            adapter=countriesAdapter
+            adapter = countriesAdapter
         }
 
     }

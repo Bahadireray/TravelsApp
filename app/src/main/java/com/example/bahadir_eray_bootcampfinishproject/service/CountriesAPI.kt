@@ -3,7 +3,6 @@ package com.example.bahadir_eray_bootcampfinishproject.service
 import com.example.bahadir_eray_bootcampfinishproject.data.model.countries.CountriesModel
 import io.reactivex.Single
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface CountriesAPI {
