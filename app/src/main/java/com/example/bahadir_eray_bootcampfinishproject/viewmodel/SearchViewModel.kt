@@ -22,9 +22,6 @@ class SearchViewModel(application: Application) : BaseViewModel(application) {
     private var refreshTime = 10 * 60 * 1000 * 1000 * 1000L
 
 
-    override fun onCleared() {
-    }
-
     fun refreshData() {
         val updateTime = customSharedPreferences.getTime()
         if (updateTime != null && updateTime != 0L && System.nanoTime() - updateTime < refreshTime) {
@@ -82,4 +79,8 @@ class SearchViewModel(application: Application) : BaseViewModel(application) {
         customSharedPreferences.saveTime(System.nanoTime())
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        disposable.clear()
+    }
 }

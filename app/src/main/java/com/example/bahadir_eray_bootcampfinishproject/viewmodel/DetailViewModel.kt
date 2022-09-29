@@ -1,4 +1,10 @@
 package com.example.bahadir_eray_bootcampfinishproject.viewmodel
 
-class DetailViewModel {
+import android.app.Application
+
+class DetailViewModel(application: Application) : BaseViewModel(application) {
+
+    override fun onCleared() {
+        super.onCleared()
+    }
 }

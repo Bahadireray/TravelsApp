@@ -1,4 +1,9 @@
 package com.example.bahadir_eray_bootcampfinishproject.viewmodel
 
-class GuideViewModel {
+import android.app.Application
+
+class GuideViewModel(application: Application) : BaseViewModel(application) {
+    override fun onCleared() {
+        super.onCleared()
+    }
 }

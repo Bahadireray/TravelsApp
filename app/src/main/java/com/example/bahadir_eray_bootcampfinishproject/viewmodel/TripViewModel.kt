@@ -1,4 +1,9 @@
 package com.example.bahadir_eray_bootcampfinishproject.viewmodel
 
-class TripViewModel {
+import android.app.Application
+
+class TripViewModel(application: Application) : BaseViewModel(application) {
+    override fun onCleared() {
+        super.onCleared()
+    }
 }

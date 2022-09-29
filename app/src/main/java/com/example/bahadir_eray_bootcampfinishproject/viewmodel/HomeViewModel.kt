@@ -1,8 +1,8 @@
 package com.example.bahadir_eray_bootcampfinishproject.viewmodel
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.bahadir_eray_bootcampfinishproject.data.model.hotels.HotelsModel
 import com.example.bahadir_eray_bootcampfinishproject.service.HotelsService
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -10,14 +10,10 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel(application: Application) : BaseViewModel(application) {
     val hotels = MutableLiveData<List<HotelsModel>>()
     private val hotelsService = HotelsService()
     private val disposable = CompositeDisposable()
-
-
-    override fun onCleared() {
-    }
 
     fun refreshData() {
         getDataFromAPI()
@@ -42,5 +38,9 @@ class HomeViewModel : ViewModel() {
         )
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        disposable.clear()
+    }
 
 }
