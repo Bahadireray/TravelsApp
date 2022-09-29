@@ -30,7 +30,7 @@ class SearchViewModel : ViewModel() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<CountriesModel>>() {
                     override fun onSuccess(t: List<CountriesModel>) {
-                        countriesModel.value = t
+                        storeSQLite(t)
                     }
 
                     override fun onError(e: Throwable) {
@@ -38,8 +38,15 @@ class SearchViewModel : ViewModel() {
                     }
                 })
         )
-
     }
 
+    private fun showCountries(countriesList: List<CountriesModel>) {
+        countriesModel.value = countriesList
+    }
+
+    private fun storeSQLite(list: List<CountriesModel>) {
+
+
+    }
 
 }
