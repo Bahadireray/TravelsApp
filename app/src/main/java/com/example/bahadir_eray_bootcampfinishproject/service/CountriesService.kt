@@ -1,10 +1,13 @@
 package com.example.bahadir_eray_bootcampfinishproject.service
 
 import com.example.bahadir_eray_bootcampfinishproject.data.model.countries.CountriesModel
+import com.example.bahadir_eray_bootcampfinishproject.service.CountriesAPI.Companion.API_HOST
+import com.example.bahadir_eray_bootcampfinishproject.service.CountriesAPI.Companion.API_KEY
 import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Query
 
 class CountriesService {
 
@@ -17,6 +20,6 @@ class CountriesService {
         .create(CountriesAPI::class.java)
 
     fun getCountries(): Single<List<CountriesModel>> {
-        return api.getCountriesData()
+        return api.getCountriesData(API_KEY, API_HOST)
     }
 }

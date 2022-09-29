@@ -5,6 +5,8 @@ import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import com.example.bahadir_eray_bootcampfinishproject.service.HotelsAPI.Companion.API_HOST
+import com.example.bahadir_eray_bootcampfinishproject.service.HotelsAPI.Companion.API_KEY
 
 class HotelsService {
 
@@ -17,6 +19,6 @@ class HotelsService {
         .create(HotelsAPI::class.java)
 
     fun getHotels(): Single<List<HotelsModel>> {
-        return api.getData()
+        return api.getData(API_HOST, API_KEY)
     }
 }

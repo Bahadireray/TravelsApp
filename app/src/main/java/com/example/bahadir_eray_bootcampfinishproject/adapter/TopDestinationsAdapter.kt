@@ -9,6 +9,8 @@ import com.bumptech.glide.Glide
 import com.example.bahadir_eray_bootcampfinishproject.data.model.countries.CountriesModel
 import com.example.bahadir_eray_bootcampfinishproject.data.model.hotels.HotelsModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastionItemBinding
+import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
+import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
 class TopDestinationsAdapter(val countriesList: ArrayList<CountriesModel>) :
     RecyclerView.Adapter<TopDestinationsAdapter.TopCountriesViewHolder>() {
@@ -26,12 +28,10 @@ class TopDestinationsAdapter(val countriesList: ArrayList<CountriesModel>) :
     }
 
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
-        Glide.with(context)
-            .load(countriesList[position].data.flagImageUri)
-            .into(holder.topDestinastionItemBinding.topImageItem)
-        holder.itemView.setOnClickListener {
-            Toast.makeText(context, "${countriesList[position]}", Toast.LENGTH_LONG).show()
-        }
+        holder.topDestinastionItemBinding.topImageItem.downloadFromUrl(
+            countriesList[position].data.flagImageUri,
+            placeholderProgressBar(holder.itemView.context)
+        )
     }
 
     override fun getItemCount(): Int {

@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.bahadir_eray_bootcampfinishproject.databinding.DealsItemsBinding
 import com.example.bahadir_eray_bootcampfinishproject.data.model.hotels.HotelsModel
+import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
+import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
 class HotelRecyclerAdapter(val hotelsList: ArrayList<HotelsModel>) :
     RecyclerView.Adapter<HotelRecyclerAdapter.HotelViewHolder>() {
@@ -24,10 +26,10 @@ class HotelRecyclerAdapter(val hotelsList: ArrayList<HotelsModel>) :
     }
 
     override fun onBindViewHolder(holder: HotelViewHolder, position: Int) {
-
-        Glide.with(context)
-            .load(hotelsList[position].hotelImages)
-            .into(holder.dealsItemsBinding.detalsImageItem)
+        holder.dealsItemsBinding.detalsImageItem.downloadFromUrl(
+            hotelsList[position].hotelImages.toString(),
+            placeholderProgressBar(holder.itemView.context)
+        )
     }
 
     override fun getItemCount(): Int {
