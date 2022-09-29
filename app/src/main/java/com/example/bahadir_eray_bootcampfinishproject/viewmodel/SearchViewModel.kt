@@ -4,7 +4,6 @@ import android.app.Application
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.bahadir_eray_bootcampfinishproject.data.model.countries.CountriesModel
 import com.example.bahadir_eray_bootcampfinishproject.data.roomdb.CountriesDataBase
 import com.example.bahadir_eray_bootcampfinishproject.service.CountriesService

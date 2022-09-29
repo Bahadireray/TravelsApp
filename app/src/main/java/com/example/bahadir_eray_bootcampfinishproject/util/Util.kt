@@ -9,12 +9,6 @@ import com.example.bahadir_eray_bootcampfinishproject.R
 
 //Extension
 
-/*
-fun String.myExtension(myParameter: String) {
-    println(myParameter)
-}
- */
-
 fun ImageView.downloadFromUrl(url: String?, progressDrawable: CircularProgressDrawable) {
 
     val options = RequestOptions()

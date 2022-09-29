@@ -46,6 +46,7 @@ class HomeFragment : Fragment() {
         viewModel.getDataFromAPI()
         observeLiveData()
     }
+
     private fun observeLiveData() {
         viewModel.hotels.observe(viewLifecycleOwner, Observer { hotels ->
             hotels?.let {
