@@ -13,8 +13,8 @@ class TopDestinationsAdapter(val countriesList: ArrayList<CountriesModel>) :
     RecyclerView.Adapter<TopDestinationsAdapter.TopCountriesViewHolder>() {
     private lateinit var context: Context
 
-    class TopCountriesViewHolder(var topDestinastionItemBinding: TopDestinastionItemBinding) :
-        RecyclerView.ViewHolder(topDestinastionItemBinding.root) {
+    class TopCountriesViewHolder(var view: TopDestinastionItemBinding) :
+        RecyclerView.ViewHolder(view.root) {
 
     }
 
@@ -25,7 +25,7 @@ class TopDestinationsAdapter(val countriesList: ArrayList<CountriesModel>) :
     }
 
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
-        holder.topDestinastionItemBinding.topImageItem.downloadFromUrl(
+        holder.view.topImageItem.downloadFromUrl(
             countriesList[position].data.flagImageUri,
             placeholderProgressBar(holder.itemView.context)
         )
