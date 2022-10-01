@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bahadir_eray_bootcampfinishproject.adapter.NearbyRecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.adapter.TopDestinationsAdapter
 import com.example.bahadir_eray_bootcampfinishproject.data.model.country.CountryModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentSearchBinding
@@ -23,8 +22,6 @@ class SearchFragment : Fragment() {
     private lateinit var viewModel: SearchViewModel
     private var countriesModel: ArrayList<CountryModel>? = null
     private var countriesAdapter = TopDestinationsAdapter(arrayListOf())
-    private var nearbyRecyclerAdapter: NearbyRecyclerView? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

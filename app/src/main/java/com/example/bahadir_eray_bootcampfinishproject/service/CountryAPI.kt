@@ -7,12 +7,11 @@ import retrofit2.http.GET
 interface CountryAPI {
 
     //GET, POST
-
-    //https://raw.githubusercontent.com/atilsamancioglu/IA19-DataSetCountries/master/countrydataset.json
+    //https://raw.githubusercontent.com/Bahadireray/ApiExample/main/ornekApi.json
     //BASE_URL -> https://raw.githubusercontent.com/
-    //EXT -> atilsamancioglu/IA19-DataSetCountries/master/countrydataset.json
+    //EXT -> Bahadireray/ApiExample/main/ornekApi.json
 
-    @GET("atilsamancioglu/IA19-DataSetCountries/master/countrydataset.json")
+    @GET("Bahadireray/ApiExample/main/ornekApi.json")
     fun getCountries(): Single<List<CountryModel>>
 
 

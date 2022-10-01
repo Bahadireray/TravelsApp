@@ -10,9 +10,8 @@ import com.example.bahadir_eray_bootcampfinishproject.data.model.country.Country
 import com.example.bahadir_eray_bootcampfinishproject.databinding.NearbyAttractionsItemBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
-import com.example.bahadir_eray_bootcampfinishproject.view.fragment.SearchFragment
 
-class NearbyRecyclerView(val countryList: ArrayList<CountryModel>, searchFragment: SearchFragment) :
+class NearbyRecyclerView(val countryList: ArrayList<CountryModel>) :
     RecyclerView.Adapter<NearbyRecyclerView.NearbyViewHolder>() {
     private lateinit var context: Context
 
