@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.bahadir_eray_bootcampfinishproject.adapter.NearbyRecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.adapter.TopDestinationsAdapter
 import com.example.bahadir_eray_bootcampfinishproject.data.model.country.CountryModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentSearchBinding
@@ -24,6 +23,7 @@ class SearchFragment : Fragment() {
     private lateinit var viewModel: SearchViewModel
     private var countriesModel: ArrayList<CountryModel>? = null
     private var countriesAdapter = TopDestinationsAdapter(arrayListOf())
+    private var nearbyRecyclerAdapter: NearbyRecyclerView? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +33,7 @@ class SearchFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSearchBinding.inflate(layoutInflater, container, false)
         val view = binding.root
         return view
@@ -44,14 +44,16 @@ class SearchFragment : Fragment() {
         viewModel.refreshDataTop()
 
         observeLiveData()
-    /*    binding.topRecyclerView.apply {
-            layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-            adapter = countriesAdapter
-        }
+        /*    binding.topRecyclerView.apply {
+                layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+                adapter = countriesAdapter
+            }
 
      */
-        binding.topRecyclerView.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        binding.topRecyclerView.adapter=countriesAdapter
+        binding.topRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.topRecyclerView.adapter = countriesAdapter
+
     }
 
     private fun observeLiveData() {
@@ -61,7 +63,7 @@ class SearchFragment : Fragment() {
                 binding.topRecyclerView.visibility = View.VISIBLE
                 countriesAdapter.updateCountriesList(countries)
 
-                Log.d("TEST",countries.toString())
+                Log.d("TEST", countries.toString())
 
             }
         })
