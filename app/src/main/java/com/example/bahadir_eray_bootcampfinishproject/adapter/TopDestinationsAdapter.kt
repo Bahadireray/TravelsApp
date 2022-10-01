@@ -3,13 +3,14 @@ package com.example.bahadir_eray_bootcampfinishproject.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bahadir_eray_bootcampfinishproject.data.model.countries.CountriesModel
+import com.example.bahadir_eray_bootcampfinishproject.data.model.country.CountryModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastionItemBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class TopDestinationsAdapter(val countriesList: ArrayList<CountriesModel>) :
+class TopDestinationsAdapter(val countryList: ArrayList<CountryModel>) :
     RecyclerView.Adapter<TopDestinationsAdapter.TopCountriesViewHolder>() {
     private lateinit var context: Context
 
@@ -25,20 +26,29 @@ class TopDestinationsAdapter(val countriesList: ArrayList<CountriesModel>) :
     }
 
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
+
+        holder.view.imgTitle.text = countryList[position].countryName
         holder.view.topImageItem.downloadFromUrl(
-            countriesList[position].data.flagImageUri,
+            countryList[position].imageUrl,
             placeholderProgressBar(holder.itemView.context)
         )
+        holder.itemView.setOnClickListener {
+            Toast.makeText(
+                context,
+                countryList[position].countryName.toString(),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
+
 
     override fun getItemCount(): Int {
-        return countriesList.count()
+        return countryList.count()
     }
 
-    fun updateCountriesList(newCountriesModel: List<CountriesModel>) {
-        countriesList.clear()
-        countriesList.addAll(newCountriesModel)
-        notifyDataSetChanged()
+    fun updateCountriesList(newCountriesModel: List<CountryModel>) {
+        countryList.clear()
+        countryList.addAll(newCountriesModel)
+         notifyDataSetChanged()
     }
-
 }
