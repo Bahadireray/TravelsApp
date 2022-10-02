@@ -11,7 +11,7 @@
 
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/guideTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -21,12 +21,12 @@
             android:text="Guide"
             android:textColor="#000000"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/topRecyclerView"
+            app:layout_constraintBottom_toTopOf="@+id/mightRecyclerView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/ToptxtView"
+            android:id="@+id/mightTxtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -36,7 +36,7 @@
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/guideTextView" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -47,10 +47,10 @@
             android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topRecyclerView">
+            app:layout_constraintTop_toBottomOf="@+id/mightRecyclerView">
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/guideSearchText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="6"
@@ -59,7 +59,7 @@
                 android:inputType="textPersonName" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/searchImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -68,7 +68,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/topRecyclerView"
+            android:id="@+id/mightRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_marginTop="24dp"
@@ -76,13 +76,14 @@
             app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/guideTextView" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/topPickarticlesTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="6dp"
             android:fontFamily="@font/source_sans_pro_bold"
             android:text="Top-pick articles "
@@ -93,7 +94,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/nearbyRecyclerView"
+            android:id="@+id/topPicRecyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="1dp"
@@ -101,7 +102,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            app:layout_constraintTop_toBottomOf="@+id/topPickarticlesTextView" />
+
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -110,50 +112,53 @@
             android:layout_marginStart="1dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="1dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="32dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintBottom_toTopOf="@+id/topPickarticlesTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topRecyclerView">
+            app:layout_constraintTop_toBottomOf="@+id/mightRecyclerView">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/sightseeingTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="TextView" />
+                android:text="Sightseeing"
+                android:textColor="#0048F0" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/resortTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="TextView" />
+                android:text="Resort"
+                android:textColor="#0048F0" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/restaurantTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="TextView" />
+                android:text="Restaurant"
+                android:textColor="#0048F0" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/seeAllTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:lines="1"
             android:text="See all "
             android:textColor="#FF4760"
-            app:layout_constraintBottom_toTopOf="@+id/topRecyclerView"
+            app:layout_constraintBottom_toTopOf="@+id/mightRecyclerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.994"
-            app:layout_constraintStart_toEndOf="@+id/ToptxtView"
+            app:layout_constraintStart_toEndOf="@+id/mightTxtView"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.857" />
 
