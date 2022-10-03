@@ -34,12 +34,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         viewModel.getDataFromAPI()
-        binding.allTxtView.setTextColor(Color.parseColor("#ff0000"))
-        viewModel.setFilter("all")
-        while (allData < 2) {
-            observeLiveData()
-            allData = 2
-        }
+        observeLiveData()
+        getAll()
 
         binding.allTxtView.setOnClickListener {
             binding.allTxtView.setTextColor(Color.parseColor("#ff0000"))
@@ -102,4 +98,10 @@ class HomeFragment : Fragment() {
         })
     }
 
+    fun getAll() {
+        binding.allTxtView.setTextColor(Color.parseColor("#ff0000"))
+        binding.flighsTxtView.setTextColor(Color.parseColor("#C2C5D6"))
+        binding.hotelsTxtView.setTextColor(Color.parseColor("#C2C5D6"))
+        binding.transportationsTxtView.setTextColor(Color.parseColor("#C2C5D6"))
+    }
 }

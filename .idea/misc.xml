@@ -18,15 +18,17 @@
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/drawable/bottom_corner.xml" value="0.1785" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/drawable/detail_corner_image.xml" value="0.1785" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/deals_items.xml" value="0.6" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/deals_items.xml" value="0.15561959654178675" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_detail.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_guide.xml" value="0.4813664596273292" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_guide.xml" value="0.176" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_see_all.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_trip.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/nearby_attractions_item.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/nearby_attractions_item.xml" value="0.25754310344827586" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/see_all_row.xml" value="0.264" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/top_destinastion_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/top_pic_recycler_view_row.xml" value="0.18984375" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/top_pic_recycler_view_row.xml" value="0.4" />
       </map>
     </option>
   </component>

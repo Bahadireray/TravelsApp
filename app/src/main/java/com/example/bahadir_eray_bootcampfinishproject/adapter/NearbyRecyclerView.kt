@@ -25,11 +25,12 @@ class NearbyRecyclerView(val hotelsList: MutableList<HotelsModel>) :
     }
 
     override fun onBindViewHolder(holder: NearbyViewHolder, position: Int) {
+        holder.nearbyAttractionsItemBinding.typeText.text = hotelsList[position].category
+        holder.nearbyAttractionsItemBinding.nearbyTitle.text = hotelsList[position].city
         holder.nearbyAttractionsItemBinding.nearbyImage.downloadFromUrl(
             hotelsList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
-        holder.nearbyAttractionsItemBinding.nearbyTitle.text = hotelsList[position].city
     }
 
 

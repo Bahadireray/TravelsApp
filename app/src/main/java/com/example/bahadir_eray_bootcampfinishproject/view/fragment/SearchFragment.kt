@@ -9,6 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bahadir_eray_bootcampfinishproject.adapter.DealsAdapter
+import com.example.bahadir_eray_bootcampfinishproject.adapter.NearbyRecyclerView
+import com.example.bahadir_eray_bootcampfinishproject.adapter.TopDestinationsAdapter
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentSearchBinding
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.SearchViewModel
 
@@ -43,11 +45,10 @@ class SearchFragment : Fragment() {
         viewModel.hotelsModel.observe(viewLifecycleOwner, Observer { hotels ->
             hotels?.let {
                 viewModel.setFilter("topdestination")
-
                 binding.topRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.topRecyclerView.adapter =
-                    DealsAdapter(viewModel.filtrelHotelsModel.value!!.toMutableList())
+                    TopDestinationsAdapter(viewModel.filtrelHotelsModel.value!!.toMutableList())
             }
 
         })
@@ -56,11 +57,11 @@ class SearchFragment : Fragment() {
     private fun observeLiveDataNearBy() {
         viewModel.hotelsModel.observe(viewLifecycleOwner, Observer { hotels ->
             hotels?.let {
-                viewModel.setFilter("nearby")
+                viewModel.setFilter("all")
                 binding.nearbyRecyclerView.layoutManager =
                     LinearLayoutManager(context)
                 binding.nearbyRecyclerView.adapter =
-                    DealsAdapter(viewModel.filtrelHotelsModel.value!!.toMutableList())
+                    NearbyRecyclerView(viewModel.filtrelHotelsModel.value!!.toMutableList())
             }
 
         })

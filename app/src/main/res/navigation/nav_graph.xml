@@ -14,7 +14,11 @@
         android:id="@+id/guideFragment"
         android:name="com.example.bahadir_eray_bootcampfinishproject.view.fragment.GuideFragment"
         android:label="fragment_guide"
-        tools:layout="@layout/fragment_guide" />
+        tools:layout="@layout/fragment_guide" >
+        <action
+            android:id="@+id/action_guideFragment_to_seeAllFragment"
+            app:destination="@id/seeAllFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.bahadir_eray_bootcampfinishproject.view.fragment.HomeFragment"
@@ -30,4 +34,9 @@
         android:name="com.example.bahadir_eray_bootcampfinishproject.view.fragment.TripFragment"
         android:label="fragment_trip"
         tools:layout="@layout/fragment_trip" />
+    <fragment
+        android:id="@+id/seeAllFragment"
+        android:name="com.example.bahadir_eray_bootcampfinishproject.view.fragment.SeeAllFragment"
+        android:label="fragment_see_all"
+        tools:layout="@layout/fragment_see_all" />
 </navigation>

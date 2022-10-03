@@ -24,11 +24,13 @@ class TopPicRecyclerView(val hotelsList: MutableList<HotelsModel>) :
     }
 
     override fun onBindViewHolder(holder: TopPicViewHolder, position: Int) {
+
         holder.view.topImage.downloadFromUrl(
             hotelsList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
-        holder.view.topTitle.text = hotelsList[position].description
+        holder.view.topTitle.text = hotelsList[position].title
+        holder.view.topDescriptionText.text=hotelsList[position].description
     }
 
     override fun getItemCount(): Int {

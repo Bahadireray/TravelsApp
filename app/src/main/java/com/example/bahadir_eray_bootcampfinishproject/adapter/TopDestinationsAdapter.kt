@@ -1,11 +1,9 @@
 package com.example.bahadir_eray_bootcampfinishproject.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bahadir_eray_bootcampfinishproject.data.model.country.CountryModel
 import com.example.bahadir_eray_bootcampfinishproject.data.model.hotel.HotelsModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastionItemBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl

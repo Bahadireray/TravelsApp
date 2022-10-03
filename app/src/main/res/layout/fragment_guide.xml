@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="27dp"
             android:fontFamily="@font/source_sans_pro_bold"
             android:text="Guide"
@@ -70,7 +70,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mightRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="120dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="56dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
