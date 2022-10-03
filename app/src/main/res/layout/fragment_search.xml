@@ -14,7 +14,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/source_sans_pro_bold"
             android:text="Search"
             android:textColor="#000000"
@@ -32,6 +32,7 @@
             android:orientation="horizontal"
             android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
@@ -57,7 +58,7 @@
             android:id="@+id/ToptxtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/source_sans_pro_bold"
             android:text="TOP DESTINATIONS"
             android:textSize="20sp"
@@ -70,8 +71,10 @@
             android:id="@+id/topRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="160dp"
+            android:layout_marginTop="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ToptxtView" />
 
@@ -80,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:layout_marginEnd="220dp"
             android:layout_marginBottom="6dp"
             android:fontFamily="@font/source_sans_pro_bold"
@@ -89,6 +92,7 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/nearbyRecyclerView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topRecyclerView" />
 

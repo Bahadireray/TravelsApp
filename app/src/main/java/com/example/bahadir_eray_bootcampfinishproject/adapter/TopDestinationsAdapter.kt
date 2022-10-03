@@ -28,7 +28,7 @@ class TopDestinationsAdapter(val hotelsList: MutableList<HotelsModel>) :
 
 
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
-        //holder.topDestinastionItemBinding.imgTitle.text=hotelsList[position].title
+        holder.topDestinastionItemBinding.imgTitle.text=hotelsList[position].title
         holder.topDestinastionItemBinding.topImageItem.downloadFromUrl(
             hotelsList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
