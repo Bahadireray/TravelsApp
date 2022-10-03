@@ -1,5 +1,6 @@
 package com.example.bahadir_eray_bootcampfinishproject.view.fragment
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,8 +28,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        viewModel.refreshData()
-        observeLiveData()
+        binding.allTxtView.setOnClickListener {
+            binding.allTxtView.setTextColor(Color.parseColor("#ff0000"))
+            viewModel.refreshDataAll()
+            observeLiveData()
+        }
     }
 
     private fun observeLiveData() {

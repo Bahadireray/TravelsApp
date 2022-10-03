@@ -1,10 +1,9 @@
 package com.example.bahadir_eray_bootcampfinishproject.adapter
 
-import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.data.model.country.CountryModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastionItemBinding
@@ -15,8 +14,8 @@ class TopDestinationsAdapter(val countryList: ArrayList<CountryModel>) :
     RecyclerView.Adapter<TopDestinationsAdapter.TopCountriesViewHolder>() {
     private lateinit var context: Context
 
-    class TopCountriesViewHolder(var view: TopDestinastionItemBinding) :
-        RecyclerView.ViewHolder(view.root) {
+    class TopCountriesViewHolder(val topDestinastionItemBinding: TopDestinastionItemBinding) :
+        RecyclerView.ViewHolder(topDestinastionItemBinding.root) {
 
     }
 
@@ -26,19 +25,14 @@ class TopDestinationsAdapter(val countryList: ArrayList<CountryModel>) :
         return TopCountriesViewHolder(topDestinastionItemBinding)
     }
 
+
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
-        holder.view.imgTitle.text = countryList[position].countryName
-        holder.view.topImageItem.downloadFromUrl(
+        holder.topDestinastionItemBinding.imgTitle.text =
+            countryList[position].countryName.toString()
+        holder.topDestinastionItemBinding.topImageItem.downloadFromUrl(
             countryList[position].imageUrl,
             placeholderProgressBar(holder.itemView.context)
         )
-        holder.itemView.setOnClickListener {
-            Toast.makeText(
-                context,
-                countryList[position].countryName.toString(),
-                Toast.LENGTH_SHORT
-            ).show()
-        }
     }
 
 
@@ -46,7 +40,6 @@ class TopDestinationsAdapter(val countryList: ArrayList<CountryModel>) :
         return countryList.count()
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     fun updateCountriesList(newCountriesModel: List<CountryModel>) {
         countryList.clear()
         countryList.addAll(newCountriesModel)

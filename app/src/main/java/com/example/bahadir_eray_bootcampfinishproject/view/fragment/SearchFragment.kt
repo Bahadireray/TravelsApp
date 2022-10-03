@@ -37,7 +37,6 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel = ViewModelProviders.of(this).get(SearchViewModel::class.java)
         viewModel.refreshDataTop()
-
         observeLiveData()
         binding.topRecyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -51,7 +50,8 @@ class SearchFragment : Fragment() {
             countries?.let {
                 countriesAdapter.updateCountriesList(countries)
 
-                Log.d("TEST", countries.toString())
+                val searchAll = ArrayList(countries)
+                Log.d("TEST", searchAll.toString())
 
             }
         })

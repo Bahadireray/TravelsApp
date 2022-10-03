@@ -19,7 +19,7 @@ class SearchViewModel(application: Application) : BaseViewModel(application) {
     private val disposable = CompositeDisposable()
     private var customSharedPreferences = CustomSharedPreferences(getApplication())
     val countriesModel = MutableLiveData<List<CountryModel>>()
-    private var refreshTime = 10 * 60 * 1000 * 1000 * 1000L
+    private var refreshTime = 0.1 * 60 * 1000 * 1000 * 1000L
 
 
     fun refreshDataTop() {
