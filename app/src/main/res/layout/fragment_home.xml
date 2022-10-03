@@ -269,6 +269,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dealsRecyclerView"
+
             android:layout_width="409dp"
             android:layout_height="245dp"
             app:layout_constraintBottom_toBottomOf="parent"
