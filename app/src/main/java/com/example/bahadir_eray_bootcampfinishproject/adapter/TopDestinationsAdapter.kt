@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.data.model.country.CountryModel
+import com.example.bahadir_eray_bootcampfinishproject.data.model.hotel.HotelsModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastionItemBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class TopDestinationsAdapter(val countryList: ArrayList<CountryModel>) :
+class TopDestinationsAdapter(val hotelsList: MutableList<HotelsModel>) :
     RecyclerView.Adapter<TopDestinationsAdapter.TopCountriesViewHolder>() {
     private lateinit var context: Context
 
@@ -27,22 +28,16 @@ class TopDestinationsAdapter(val countryList: ArrayList<CountryModel>) :
 
 
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
-        holder.topDestinastionItemBinding.imgTitle.text =
-            countryList[position].countryName.toString()
+        //holder.topDestinastionItemBinding.imgTitle.text=hotelsList[position].title
         holder.topDestinastionItemBinding.topImageItem.downloadFromUrl(
-            countryList[position].imageUrl,
+            hotelsList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
     }
 
 
     override fun getItemCount(): Int {
-        return countryList.count()
+        return hotelsList.count()
     }
 
-    fun updateCountriesList(newCountriesModel: List<CountryModel>) {
-        countryList.clear()
-        countryList.addAll(newCountriesModel)
-        notifyDataSetChanged()
-    }
 }

@@ -243,35 +243,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="All" />
+                android:text="All"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/flighsTxtView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Flights" />
+                android:text="Flights"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/hotelsTxtView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Hotels" />
+                android:text="Hotels"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/transportationsTxtView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Transportations" />
+                android:text="Transportations"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dealsRecyclerView"
-
-            android:layout_width="409dp"
-            android:layout_height="245dp"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
