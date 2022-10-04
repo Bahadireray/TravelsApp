@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bahadir_eray_bootcampfinishproject.adapter.MightAdapter
 import com.example.bahadir_eray_bootcampfinishproject.adapter.TopPicAdapter
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentGuideBinding
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.GuideViewModel
@@ -37,6 +38,7 @@ class GuideFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(GuideViewModel::class.java)
         viewModel.getDataFromAPI()
         observeLiveDataTopDestinations()
+        observeLiveDataMightNeed()
 
     }
 
@@ -48,6 +50,19 @@ class GuideFragment : Fragment() {
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.topPicRecyclerView.adapter =
                     TopPicAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
+            }
+
+        })
+    }
+
+    private fun observeLiveDataMightNeed() {
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { hotels ->
+            hotels?.let {
+                viewModel.setFilter("transportation")
+                binding.mightRecyclerView.layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                binding.mightRecyclerView.adapter =
+                    MightAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
             }
 
         })
