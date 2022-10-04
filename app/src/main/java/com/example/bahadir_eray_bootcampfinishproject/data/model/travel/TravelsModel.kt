@@ -1,12 +1,12 @@
-package com.example.bahadir_eray_bootcampfinishproject.data.model.hotel
+package com.example.bahadir_eray_bootcampfinishproject.data.model.travel
 
-data class HotelsModel(
+data class TravelsModel(
     val category: String,
     val city: String,
     val country: String,
     val description: String,
     val id: String,
-    val images: List<HotelsImage>?,
+    val images: List<TravelsImage>?,
     val isBookmark: Boolean,
     val title: String
 )

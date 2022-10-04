@@ -8,14 +8,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bahadir_eray_bootcampfinishproject.R
-import com.example.bahadir_eray_bootcampfinishproject.adapter.DealsAdapter
-import com.example.bahadir_eray_bootcampfinishproject.adapter.TopPicRecyclerView
+import com.example.bahadir_eray_bootcampfinishproject.adapter.TopPicAdapter
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentGuideBinding
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.GuideViewModel
-import com.example.bahadir_eray_bootcampfinishproject.viewmodel.SearchViewModel
 
 class GuideFragment : Fragment() {
 
@@ -38,10 +34,6 @@ class GuideFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.seeAllTextView.setOnClickListener {
-            //   Navigation.findNavController(view).navigate(R.id.action_guideFragment_to_seeAllFragment)
-            Toast.makeText(context, "see All", Toast.LENGTH_SHORT).show()
-        }
         viewModel = ViewModelProviders.of(this).get(GuideViewModel::class.java)
         viewModel.getDataFromAPI()
         observeLiveDataTopDestinations()
@@ -49,14 +41,13 @@ class GuideFragment : Fragment() {
     }
 
     private fun observeLiveDataTopDestinations() {
-        viewModel.hotelsModel.observe(viewLifecycleOwner, Observer { hotels ->
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { hotels ->
             hotels?.let {
                 viewModel.setFilter("topdestination")
-
                 binding.topPicRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.topPicRecyclerView.adapter =
-                    TopPicRecyclerView(viewModel.filtrelHotelsModel.value!!.toMutableList())
+                    TopPicAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
             }
 
         })

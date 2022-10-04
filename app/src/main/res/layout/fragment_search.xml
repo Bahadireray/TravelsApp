@@ -9,7 +9,6 @@
         android:layout_height="match_parent"
         tools:context=".view.fragment.SearchFragment">
 
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"

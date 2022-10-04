@@ -18,7 +18,6 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: HomeViewModel
-    var allData = 1
 
 
     override fun onCreateView(
@@ -45,7 +44,6 @@ class HomeFragment : Fragment() {
             viewModel.setFilter("all")
             getAdapter()
         }
-
         binding.flighsTxtView.setOnClickListener {
             binding.flighsTxtView.setTextColor(Color.parseColor("#ff0000"))
             binding.allTxtView.setTextColor(Color.parseColor("#C2C5D6"))
@@ -64,7 +62,6 @@ class HomeFragment : Fragment() {
             getAdapter()
 
         }
-
         binding.transportationsTxtView.setOnClickListener {
 
             binding.flighsTxtView.setTextColor(Color.parseColor("#C2C5D6"))
@@ -74,27 +71,24 @@ class HomeFragment : Fragment() {
             viewModel.setFilter("transportation")
             getAdapter()
         }
-
     }
 
     private fun getAdapter() {
         binding.dealsRecyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.dealsRecyclerView.adapter =
-            DealsAdapter(viewModel.filtrelHotelsModel.value!!.toMutableList())
-
+            DealsAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
     }
 
     private fun observeLiveData() {
-        viewModel.hotelsModel.observe(viewLifecycleOwner, Observer { hotels ->
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { hotels ->
             hotels?.let {
                 viewModel.setFilter("all")
                 binding.dealsRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.dealsRecyclerView.adapter =
-                    DealsAdapter(viewModel.filtrelHotelsModel.value!!.toMutableList())
+                    DealsAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
             }
-
         })
     }
 

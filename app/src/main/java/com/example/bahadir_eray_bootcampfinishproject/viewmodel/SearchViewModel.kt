@@ -4,24 +4,24 @@ import android.app.Application
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import com.example.bahadir_eray_bootcampfinishproject.data.model.hotel.HotelsModel
-import com.example.bahadir_eray_bootcampfinishproject.service.HoteslAPIService
+import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
+import com.example.bahadir_eray_bootcampfinishproject.service.TravelsAPIService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
 class SearchViewModel(application: Application) : BaseViewModel(application) {
-    private val hoteslAPIService = HoteslAPIService()
+    private val travelsAPIService = TravelsAPIService()
     private val disposable = CompositeDisposable()
-    val hotelsModel = MutableLiveData<List<HotelsModel>>()
-    val filtrelHotelsModel = MutableLiveData<List<HotelsModel>>()
+    val travelsModel = MutableLiveData<List<TravelsModel>>()
+    val filtrelTravelsModel = MutableLiveData<List<TravelsModel>>()
 
     fun setFilter(filter: String) {
         if (filter == "all") {
-            filtrelHotelsModel.value = hotelsModel.value
+            filtrelTravelsModel.value = travelsModel.value
         } else {
-            filtrelHotelsModel.value = hotelsModel.value?.filter {
+            filtrelTravelsModel.value = travelsModel.value?.filter {
                 it.category == filter
             }
         }
@@ -29,13 +29,13 @@ class SearchViewModel(application: Application) : BaseViewModel(application) {
 
     fun getDataFromAPI() {
         disposable.add(
-            hoteslAPIService.getData()
+            travelsAPIService.getData()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableSingleObserver<List<HotelsModel>>() {
-                    override fun onSuccess(t: List<HotelsModel>) {
-                        hotelsModel.value = t
-                        Log.v("Home", hotelsModel.toString())
+                .subscribeWith(object : DisposableSingleObserver<List<TravelsModel>>() {
+                    override fun onSuccess(t: List<TravelsModel>) {
+                        travelsModel.value = t
+                        Log.v("Search", travelsModel.toString())
                     }
 
                     override fun onError(e: Throwable) {

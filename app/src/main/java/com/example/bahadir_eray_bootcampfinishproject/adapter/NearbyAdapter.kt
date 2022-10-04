@@ -4,13 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bahadir_eray_bootcampfinishproject.data.model.hotel.HotelsModel
+import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.NearbyAttractionsItemBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class NearbyRecyclerView(val hotelsList: MutableList<HotelsModel>) :
-    RecyclerView.Adapter<NearbyRecyclerView.NearbyViewHolder>() {
+class NearbyAdapter(val hotelsList: MutableList<TravelsModel>) :
+    RecyclerView.Adapter<NearbyAdapter.NearbyViewHolder>() {
     private lateinit var context: Context
 
     class NearbyViewHolder(var nearbyAttractionsItemBinding: NearbyAttractionsItemBinding) :

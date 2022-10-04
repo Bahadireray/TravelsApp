@@ -3,14 +3,13 @@ package com.example.bahadir_eray_bootcampfinishproject.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bahadir_eray_bootcampfinishproject.data.model.hotel.HotelsModel
-import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastionItemBinding
+import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.TopPicRecyclerViewRowBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class TopPicRecyclerView(val hotelsList: MutableList<HotelsModel>) :
-    RecyclerView.Adapter<TopPicRecyclerView.TopPicViewHolder>() {
+class TopPicAdapter(val hotelsList: MutableList<TravelsModel>) :
+    RecyclerView.Adapter<TopPicAdapter.TopPicViewHolder>() {
     class TopPicViewHolder(val view: TopPicRecyclerViewRowBinding) :
         RecyclerView.ViewHolder(view.root) {
 
