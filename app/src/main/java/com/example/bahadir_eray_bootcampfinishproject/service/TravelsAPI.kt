@@ -9,6 +9,6 @@ interface TravelsAPI {
     //https://raw.githubusercontent.com/Bahadireray/ApiExample/main/projectApi.json
 
     @GET("Bahadireray/ApiExample/main/projectApi.json")
-    fun getHotels(): Single<List<TravelsModel>>
+    fun getTravels(): Single<List<TravelsModel>>
 
 }

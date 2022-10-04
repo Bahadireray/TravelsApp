@@ -81,8 +81,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeLiveData() {
-        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { hotels ->
-            hotels?.let {
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { travels ->
+            travels?.let {
                 viewModel.setFilter("all")
                 binding.dealsRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

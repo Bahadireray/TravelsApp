@@ -9,7 +9,7 @@ import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastio
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class TopDestinationsAdapter(val hotelsList: MutableList<TravelsModel>) :
+class TopDestinationsAdapter(val travelList: MutableList<TravelsModel>) :
     RecyclerView.Adapter<TopDestinationsAdapter.TopCountriesViewHolder>() {
     private lateinit var context: Context
 
@@ -26,16 +26,16 @@ class TopDestinationsAdapter(val hotelsList: MutableList<TravelsModel>) :
 
 
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
-        holder.topDestinastionItemBinding.imgTitle.text=hotelsList[position].title
+        holder.topDestinastionItemBinding.imgTitle.text=travelList[position].title
         holder.topDestinastionItemBinding.topImageItem.downloadFromUrl(
-            hotelsList[position].images?.first()?.url,
+            travelList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
     }
 
 
     override fun getItemCount(): Int {
-        return hotelsList.count()
+        return travelList.count()
     }
 
 }

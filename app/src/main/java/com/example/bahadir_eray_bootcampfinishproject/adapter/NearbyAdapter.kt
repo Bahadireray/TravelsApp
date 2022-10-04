@@ -9,7 +9,7 @@ import com.example.bahadir_eray_bootcampfinishproject.databinding.NearbyAttracti
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class NearbyAdapter(val hotelsList: MutableList<TravelsModel>) :
+class NearbyAdapter(val travelsList: MutableList<TravelsModel>) :
     RecyclerView.Adapter<NearbyAdapter.NearbyViewHolder>() {
     private lateinit var context: Context
 
@@ -25,17 +25,17 @@ class NearbyAdapter(val hotelsList: MutableList<TravelsModel>) :
     }
 
     override fun onBindViewHolder(holder: NearbyViewHolder, position: Int) {
-        holder.nearbyAttractionsItemBinding.typeText.text = hotelsList[position].category
-        holder.nearbyAttractionsItemBinding.nearbyTitle.text = hotelsList[position].city
+        holder.nearbyAttractionsItemBinding.typeText.text = travelsList[position].category
+        holder.nearbyAttractionsItemBinding.nearbyTitle.text = travelsList[position].city
         holder.nearbyAttractionsItemBinding.nearbyImage.downloadFromUrl(
-            hotelsList[position].images?.first()?.url,
+            travelsList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
     }
 
 
     override fun getItemCount(): Int {
-        return hotelsList.count()
+        return travelsList.count()
     }
 
 }

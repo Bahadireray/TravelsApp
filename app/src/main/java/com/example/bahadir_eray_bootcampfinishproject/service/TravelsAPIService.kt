@@ -17,7 +17,7 @@ class TravelsAPIService {
         .create(TravelsAPI::class.java)
 
     fun getData(): Single<List<TravelsModel>> {
-        return api.getHotels()
+        return api.getTravels()
     }
 
 

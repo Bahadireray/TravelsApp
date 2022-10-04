@@ -41,8 +41,8 @@ class SearchFragment : Fragment() {
     }
 
     private fun observeLiveDataTopDestinations() {
-        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { hotels ->
-            hotels?.let {
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { travels ->
+            travels?.let {
                 viewModel.setFilter("topdestination")
                 binding.topRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -53,8 +53,8 @@ class SearchFragment : Fragment() {
     }
 
     private fun observeLiveDataNearBy() {
-        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { hotels ->
-            hotels?.let {
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { travels ->
+            travels?.let {
                 viewModel.setFilter("all")
                 binding.nearbyRecyclerView.layoutManager =
                     LinearLayoutManager(context)

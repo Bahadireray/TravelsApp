@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bahadir_eray_bootcampfinishproject.adapter.CategoriAdapter
 import com.example.bahadir_eray_bootcampfinishproject.adapter.MightAdapter
 import com.example.bahadir_eray_bootcampfinishproject.adapter.TopPicAdapter
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentGuideBinding
@@ -39,12 +39,13 @@ class GuideFragment : Fragment() {
         viewModel.getDataFromAPI()
         observeLiveDataTopDestinations()
         observeLiveDataMightNeed()
+        observeLiveDataCategori()
 
     }
 
     private fun observeLiveDataTopDestinations() {
-        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { hotels ->
-            hotels?.let {
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { travels ->
+            travels?.let {
                 viewModel.setFilter("topdestination")
                 binding.topPicRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -56,13 +57,26 @@ class GuideFragment : Fragment() {
     }
 
     private fun observeLiveDataMightNeed() {
-        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { hotels ->
-            hotels?.let {
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { travels ->
+            travels?.let {
                 viewModel.setFilter("transportation")
                 binding.mightRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.mightRecyclerView.adapter =
                     MightAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
+            }
+
+        })
+    }
+
+    private fun observeLiveDataCategori() {
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { travels ->
+            travels?.let {
+                viewModel.setFilter("topdestination")
+                binding.categoriRecycler.layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                binding.categoriRecycler.adapter =
+                    CategoriAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
             }
 
         })

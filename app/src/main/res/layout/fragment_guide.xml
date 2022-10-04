@@ -42,7 +42,7 @@
             android:id="@+id/linearLayout2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal"
             android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,10 +70,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mightRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="135dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="56dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintBottom_toTopOf="@+id/categoriRecycler"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/guideTextView" />
@@ -84,14 +84,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="6dp"
             android:fontFamily="@font/source_sans_pro_bold"
             android:text="Top-pick articles "
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/nearbyRecyclerView"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+            app:layout_constraintStart_toStartOf="@+id/categoriRecycler"
+            app:layout_constraintTop_toBottomOf="@+id/categoriRecycler" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/topPicRecyclerView"
@@ -105,47 +103,18 @@
             app:layout_constraintTop_toBottomOf="@+id/topPickarticlesTextView" />
 
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoriRecycler"
             android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_marginStart="1dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="32dp"
-            android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/topPickarticlesTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mightRecyclerView">
-
-            <TextView
-                android:id="@+id/sightseeingTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Sightseeing"
-                android:textColor="#0048F0" />
-
-            <TextView
-                android:id="@+id/resortTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Resort"
-                android:textColor="#0048F0" />
-
-            <TextView
-                android:id="@+id/restaurantTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Restaurant"
-                android:textColor="#0048F0" />
-        </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/mightRecyclerView"></androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:id="@+id/seeAllTextView"
