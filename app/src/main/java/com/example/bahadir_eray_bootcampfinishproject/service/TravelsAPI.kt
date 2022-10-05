@@ -5,7 +5,6 @@ import io.reactivex.Single
 import retrofit2.http.GET
 
 interface TravelsAPI {
-
     //https://raw.githubusercontent.com/Bahadireray/ApiExample/main/projectApi.json
 
     @GET("Bahadireray/ApiExample/main/projectApi.json")

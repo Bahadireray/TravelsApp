@@ -43,9 +43,7 @@ class TopDestinationsAdapter(
         }
     }
 
-
     override fun getItemCount(): Int {
         return travelList.count()
     }
-
 }

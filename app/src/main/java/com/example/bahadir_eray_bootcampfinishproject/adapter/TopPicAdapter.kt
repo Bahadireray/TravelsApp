@@ -26,7 +26,6 @@ class TopPicAdapter(val travelsList: MutableList<TravelsModel>, private val list
     }
 
     override fun onBindViewHolder(holder: TopPicViewHolder, position: Int) {
-
         holder.view.topImage.downloadFromUrl(
             travelsList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)

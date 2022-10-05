@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
-import com.example.bahadir_eray_bootcampfinishproject.databinding.DealsItemsBinding
 import com.example.bahadir_eray_bootcampfinishproject.databinding.MightNeedRowBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
@@ -43,6 +42,4 @@ class MightAdapter(val travelList: MutableList<TravelsModel>, private val listen
     override fun getItemCount(): Int {
         return travelList.count()
     }
-
-
 }

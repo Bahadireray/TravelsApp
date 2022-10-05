@@ -15,9 +15,7 @@ import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsM
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentSearchBinding
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.SearchViewModel
 
-
 class SearchFragment : Fragment(), TopDestinationsAdapter.Listener, NearbyAdapter.Listener {
-
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: SearchViewModel

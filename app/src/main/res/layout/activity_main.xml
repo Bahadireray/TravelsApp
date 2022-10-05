@@ -10,18 +10,16 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bottom_corner"
         app:itemIconTint="@color/red"
-        android:elevation="3dp"
-        app:itemBackground="@color/white"
+        app:itemRippleColor="@color/bottomColor"
         app:itemTextColor="@color/bottomColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView"
-        app:menu="@menu/bottom_menu"
-        android:background="@drawable/bottom_corner"
-        />
+        app:menu="@menu/bottom_menu" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"

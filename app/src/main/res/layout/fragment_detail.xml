@@ -12,13 +12,13 @@
             android:id="@+id/detailsCardView"
             android:layout_width="match_parent"
             android:layout_height="380dp"
-            android:elevation="3dp"
-            app:cardCornerRadius="25dp"
-            android:background="@drawable/detail_corner_image"
-            app:cardUseCompatPadding="true"
+            android:layout_marginLeft="-10dp"
             android:layout_marginTop="-28dp"
             android:layout_marginRight="-10dp"
-            android:layout_marginLeft="-10dp"
+            android:background="@drawable/detail_corner_image"
+            android:elevation="3dp"
+            app:cardCornerRadius="25dp"
+            app:cardUseCompatPadding="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +32,7 @@
 
         </androidx.cardview.widget.CardView>
 
-       <TextView
+        <TextView
             android:id="@+id/detailTitleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,12 +49,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detailsCardView" />
 
-
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="145dp"
-            android:layout_marginBottom="25dp"
             android:layout_margin="1dp"
+            android:layout_marginBottom="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detailCiytText"
             app:layout_constraintVertical_bias="0.215"

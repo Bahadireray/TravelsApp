@@ -1,7 +1,6 @@
 package com.example.bahadir_eray_bootcampfinishproject.view.activity
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -12,7 +11,6 @@ import com.example.bahadir_eray_bootcampfinishproject.view.fragment.*
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.HomeViewModel
 
 class MainActivity : AppCompatActivity() {
-
 
     private var _binding: FragmentHomeBinding? = null
     private lateinit var binding: ActivityMainBinding

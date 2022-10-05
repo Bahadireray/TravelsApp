@@ -46,10 +46,8 @@ class GuideViewModel(application: Application) : BaseViewModel(application) {
         )
     }
 
-
     override fun onCleared() {
         super.onCleared()
         disposable.clear()
     }
-
 }

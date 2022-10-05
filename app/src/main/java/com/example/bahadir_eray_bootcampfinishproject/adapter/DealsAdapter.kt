@@ -17,7 +17,6 @@ class DealsAdapter(val travelsList: MutableList<TravelsModel>, private val liste
         fun onItemClick(travelsModel: TravelsModel)
     }
 
-
     class DealsViewHolder(val dealsBinding: DealsItemsBinding) :
         RecyclerView.ViewHolder(dealsBinding.root) {
 

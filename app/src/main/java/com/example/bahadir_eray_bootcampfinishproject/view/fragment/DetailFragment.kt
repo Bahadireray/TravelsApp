@@ -11,12 +11,11 @@ import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.DetailViewModel
 
-
 class DetailFragment : Fragment() {
-
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: DetailViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -46,8 +45,5 @@ class DetailFragment : Fragment() {
             inputImg.toString(),
             placeholderProgressBar(requireActivity())
         )
-
-
     }
-
 }

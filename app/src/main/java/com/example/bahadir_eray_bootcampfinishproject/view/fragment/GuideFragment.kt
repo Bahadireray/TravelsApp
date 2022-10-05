@@ -23,7 +23,6 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -41,7 +40,6 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
         observeLiveDataTopDestinations()
         observeLiveDataMightNeed()
         observeLiveDataCategori()
-
     }
 
     private fun observeLiveDataTopDestinations() {
@@ -51,9 +49,8 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
                 binding.topPicRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.topPicRecyclerView.adapter =
-                    TopPicAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList(),this)
+                    TopPicAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList(), this)
             }
-
         })
     }
 
@@ -66,7 +63,6 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
                 binding.mightRecyclerView.adapter =
                     MightAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList(), this)
             }
-
         })
     }
 
@@ -79,7 +75,6 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
                 binding.categoriRecycler.adapter =
                     CategoriAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
             }
-
         })
     }
 
@@ -94,7 +89,6 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
             fragment.arguments = bundle
             val transaction = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
-
         }
     }
 
@@ -109,8 +103,6 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
             fragment.arguments = bundle
             val transaction = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
-
         }
     }
-
 }

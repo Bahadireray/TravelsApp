@@ -3,12 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.fragment.SearchFragment">
-
 
         <TextView
             android:id="@+id/guideTextView"
@@ -42,7 +40,7 @@
             android:id="@+id/linearLayout2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_margin="10dp"
             android:orientation="horizontal"
             android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +69,8 @@
             android:id="@+id/mightRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="135dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="56dp"
             app:layout_constraintBottom_toTopOf="@+id/categoriRecycler"
@@ -95,26 +95,23 @@
             android:id="@+id/topPicRecyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginEnd="1dp"
+            android:layout_marginStart="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topPickarticlesTextView" />
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/categoriRecycler"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="1dp"
             android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toTopOf="@+id/topPickarticlesTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mightRecyclerView"></androidx.recyclerview.widget.RecyclerView>
+            app:layout_constraintTop_toBottomOf="@+id/mightRecyclerView" />
 
         <TextView
             android:id="@+id/seeAllTextView"
@@ -131,7 +128,5 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.857" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

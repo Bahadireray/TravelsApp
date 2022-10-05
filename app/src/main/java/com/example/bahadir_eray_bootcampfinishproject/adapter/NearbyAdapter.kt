@@ -9,9 +9,10 @@ import com.example.bahadir_eray_bootcampfinishproject.databinding.NearbyAttracti
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class NearbyAdapter(val travelsList: MutableList<TravelsModel>, private val listener:Listener) :
+class NearbyAdapter(val travelsList: MutableList<TravelsModel>, private val listener: Listener) :
     RecyclerView.Adapter<NearbyAdapter.NearbyViewHolder>() {
     private lateinit var context: Context
+
     interface Listener {
         fun onItemNearbyClick(travelsModel: TravelsModel)
     }
@@ -39,9 +40,7 @@ class NearbyAdapter(val travelsList: MutableList<TravelsModel>, private val list
         }
     }
 
-
     override fun getItemCount(): Int {
         return travelsList.count()
     }
-
 }

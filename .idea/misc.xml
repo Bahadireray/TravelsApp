@@ -15,10 +15,13 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/nearby_attractions_item.xml" value="0.136" />
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/layout/top_destinastion_item.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/BahadirErayBootcampFinishProject2/app/src/main/res/menu/bottom_menu.xml" value="0.29028132992327366" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1075" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/drawable/background_home.xml" value="0.176" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/drawable/bottom_corner.xml" value="0.1785" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/drawable/detail_corner_image.xml" value="0.1785" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/drawable/detail_image_corner.xml" value="0.176" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/drawable/home_icon_background.xml" value="0.1075" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1075" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/activity_detail.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/activity_main.xml" value="0.22745098039215686" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/categori_row.xml" value="0.1" />
@@ -27,7 +30,7 @@
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_detail.xml" value="0.26767091541135574" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_detail2.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_guide.xml" value="0.19721577726218098" />
-        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_search.xml" value="0.21245421245421245" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_see_all.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/fragment_trip.xml" value="0.25416666666666665" />
@@ -36,6 +39,7 @@
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/see_all_row.xml" value="0.264" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/top_destinastion_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/layout/top_pic_recycler_view_row.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Bitirme-proje/Bahadir-Eray-BootcampFinishProject/app/src/main/res/menu/bottom_menu.xml" value="0.21388888888888888" />
       </map>
     </option>
   </component>

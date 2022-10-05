@@ -5,7 +5,6 @@ import android.app.Application
 class DetailViewModel(application: Application) : BaseViewModel(application) {
 
     fun getDataTopFrom() {
-
     }
 
     override fun onCleared() {
