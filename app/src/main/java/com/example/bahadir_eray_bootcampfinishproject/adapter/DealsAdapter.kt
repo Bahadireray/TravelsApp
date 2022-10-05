@@ -9,9 +9,14 @@ import com.example.bahadir_eray_bootcampfinishproject.databinding.DealsItemsBind
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class DealsAdapter(val travelsList: MutableList<TravelsModel>) :
+class DealsAdapter(val travelsList: MutableList<TravelsModel>, private val listener: Listener) :
     RecyclerView.Adapter<DealsAdapter.DealsViewHolder>() {
     private lateinit var context: Context
+
+    interface Listener {
+        fun onItemClick(travelsModel: TravelsModel)
+    }
+
 
     class DealsViewHolder(val dealsBinding: DealsItemsBinding) :
         RecyclerView.ViewHolder(dealsBinding.root) {
@@ -29,6 +34,9 @@ class DealsAdapter(val travelsList: MutableList<TravelsModel>) :
             travelsList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(travelsList.get(position))
+        }
     }
 
     override fun getItemCount(): Int {

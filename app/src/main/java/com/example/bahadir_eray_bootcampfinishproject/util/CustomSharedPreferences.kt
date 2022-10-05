@@ -2,13 +2,12 @@ package com.example.bahadir_eray_bootcampfinishproject.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 
 class CustomSharedPreferences {
     companion object {
         private var sharedPreferences: SharedPreferences? = null
-        private val PREFERENCES_TIME = "preferences_time"
+        private val UUID = "UUID"
 
         @Volatile
         private var instance: CustomSharedPreferences? = null
@@ -26,11 +25,9 @@ class CustomSharedPreferences {
         }
     }
 
-    fun saveTime(time: Long) {
-        sharedPreferences?.edit(commit = true) {
-            putLong(PREFERENCES_TIME, time)
-        }
+    fun saveTime(uuid: String) {
+        sharedPreferences?.edit()?.putInt(uuid.toString(), 0)?.apply()
     }
 
-    fun getTime() = sharedPreferences?.getLong(PREFERENCES_TIME, 0)
+    fun getTime() = sharedPreferences?.getLong(UUID, 0)
 }

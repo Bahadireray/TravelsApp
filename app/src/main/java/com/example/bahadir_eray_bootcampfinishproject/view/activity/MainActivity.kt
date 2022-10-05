@@ -1,12 +1,10 @@
-package com.example.bahadir_eray_bootcampfinishproject.view
+package com.example.bahadir_eray_bootcampfinishproject.view.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bahadir_eray_bootcampfinishproject.R
-import com.example.bahadir_eray_bootcampfinishproject.adapter.DealsAdapter
 import com.example.bahadir_eray_bootcampfinishproject.databinding.ActivityMainBinding
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentHomeBinding
 import com.example.bahadir_eray_bootcampfinishproject.view.fragment.GuideFragment

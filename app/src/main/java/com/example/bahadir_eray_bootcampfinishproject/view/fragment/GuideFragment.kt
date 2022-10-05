@@ -15,11 +15,10 @@ import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentGuideB
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.GuideViewModel
 
 class GuideFragment : Fragment() {
-
-
     private var _binding: FragmentGuideBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: GuideViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
