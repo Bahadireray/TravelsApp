@@ -35,12 +35,17 @@ class DetailFragment : Fragment() {
         viewModel.getDataTopFrom()
 
         val args = this.arguments
-        val inputData = args?.get("travelsTitle")
+        val inputTitle = args?.get("travelsTitle")
+        val inputCity = args?.get("travelsCity")
         val inputImg = args?.get("travelsImg")
         val inputDescription = args?.get("travelsDescription")
-        binding.detailTitleText.text = inputData.toString()
+        binding.detailCiytText.text = inputCity.toString()
+        binding.detailTitleText.text = inputTitle.toString()
         binding.detailDescriptiontext.text = inputDescription.toString()
-        binding.detailImgView.downloadFromUrl(inputImg.toString(), placeholderProgressBar(requireActivity()))
+        binding.detailImgView.downloadFromUrl(
+            inputImg.toString(),
+            placeholderProgressBar(requireActivity())
+        )
 
 
     }

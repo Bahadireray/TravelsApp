@@ -10,9 +10,13 @@ import com.example.bahadir_eray_bootcampfinishproject.databinding.MightNeedRowBi
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class MightAdapter(val travelList: MutableList<TravelsModel>) :
+class MightAdapter(val travelList: MutableList<TravelsModel>, private val listener: Listener) :
     RecyclerView.Adapter<MightAdapter.MightViewHolder>() {
     private lateinit var context: Context
+
+    interface Listener {
+        fun onItemMightClick(travelsModel: TravelsModel)
+    }
 
     class MightViewHolder(val view: MightNeedRowBinding) :
         RecyclerView.ViewHolder(view.root) {
@@ -31,6 +35,9 @@ class MightAdapter(val travelList: MutableList<TravelsModel>) :
             travelList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
+        holder.itemView.setOnClickListener {
+            listener.onItemMightClick(travelList[position])
+        }
     }
 
     override fun getItemCount(): Int {

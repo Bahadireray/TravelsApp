@@ -8,40 +8,98 @@
         android:layout_height="match_parent"
         tools:context=".view.fragment.DetailFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/detailsCardView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/detail_corner_image"
+            android:layout_height="380dp"
+            android:elevation="3dp"
+            app:cardCornerRadius="10sp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
 
             <ImageView
                 android:id="@+id/detailImgView"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
-                tools:srcCompat="@tools:sample/avatars" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
 
-        <TextView
+        </androidx.cardview.widget.CardView>
+
+       <TextView
             android:id="@+id/detailTitleText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="monospace"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#0A2753"
+            android:textSize="28sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintHorizontal_bias="0.045"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            app:layout_constraintVertical_bias="0.174" />
+            app:layout_constraintTop_toBottomOf="@+id/detailsCardView" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:layout_marginBottom="25dp"
+            android:layout_margin="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailCiytText"
+            app:layout_constraintVertical_bias="0.215"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:id="@+id/detailDescriptiontext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="monospace"
+                android:padding="15dp"
+                android:text="TextView"
+                android:textColor="#39414B"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/detailCiytText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailTitleText"
+            app:srcCompat="@drawable/pinicon" />
 
         <TextView
-            android:id="@+id/detailDescriptiontext"
+            android:id="@+id/detailCiytText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="-5dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="304dp"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#39414B"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/detailTitleText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,12 +8,15 @@ import com.example.bahadir_eray_bootcampfinishproject.databinding.TopPicRecycler
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class TopPicAdapter(val travelsList: MutableList<TravelsModel>) :
+class TopPicAdapter(val travelsList: MutableList<TravelsModel>, private val listener: Listener) :
     RecyclerView.Adapter<TopPicAdapter.TopPicViewHolder>() {
+
+    interface Listener {
+        fun onItemPicClick(travelsModel: TravelsModel)
+    }
+
     class TopPicViewHolder(val view: TopPicRecyclerViewRowBinding) :
         RecyclerView.ViewHolder(view.root) {
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopPicViewHolder {
@@ -29,7 +32,10 @@ class TopPicAdapter(val travelsList: MutableList<TravelsModel>) :
             placeholderProgressBar(holder.itemView.context)
         )
         holder.view.topTitle.text = travelsList[position].title
-        holder.view.topDescriptionText.text=travelsList[position].description
+        holder.view.topDescriptionText.text = travelsList[position].description
+        holder.itemView.setOnClickListener {
+            listener.onItemPicClick(travelsList[position])
+        }
     }
 
     override fun getItemCount(): Int {

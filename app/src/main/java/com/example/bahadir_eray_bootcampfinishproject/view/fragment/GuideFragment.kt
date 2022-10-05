@@ -8,13 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bahadir_eray_bootcampfinishproject.R
 import com.example.bahadir_eray_bootcampfinishproject.adapter.CategoriAdapter
 import com.example.bahadir_eray_bootcampfinishproject.adapter.MightAdapter
 import com.example.bahadir_eray_bootcampfinishproject.adapter.TopPicAdapter
+import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentGuideBinding
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.GuideViewModel
 
-class GuideFragment : Fragment() {
+class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener {
     private var _binding: FragmentGuideBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: GuideViewModel
@@ -49,7 +51,7 @@ class GuideFragment : Fragment() {
                 binding.topPicRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.topPicRecyclerView.adapter =
-                    TopPicAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
+                    TopPicAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList(),this)
             }
 
         })
@@ -62,7 +64,7 @@ class GuideFragment : Fragment() {
                 binding.mightRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.mightRecyclerView.adapter =
-                    MightAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
+                    MightAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList(), this)
             }
 
         })
@@ -81,5 +83,34 @@ class GuideFragment : Fragment() {
         })
     }
 
+    override fun onItemMightClick(travelsModel: TravelsModel) {
+        view?.let {
+            val fragment = DetailFragment()
+            val bundle = Bundle()
+            bundle.putString("travelsCity", travelsModel.city)
+            bundle.putString("travelsImg", travelsModel.images?.first()?.url)
+            bundle.putString("travelsTitle", travelsModel.title)
+            bundle.putString("travelsDescription", travelsModel.description)
+            fragment.arguments = bundle
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
+
+        }
+    }
+
+    override fun onItemPicClick(travelsModel: TravelsModel) {
+        view?.let {
+            val fragment = DetailFragment()
+            val bundle = Bundle()
+            bundle.putString("travelsCity", travelsModel.city)
+            bundle.putString("travelsImg", travelsModel.images?.first()?.url)
+            bundle.putString("travelsTitle", travelsModel.title)
+            bundle.putString("travelsDescription", travelsModel.description)
+            fragment.arguments = bundle
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
+
+        }
+    }
 
 }

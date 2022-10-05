@@ -8,13 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bahadir_eray_bootcampfinishproject.R
 import com.example.bahadir_eray_bootcampfinishproject.adapter.NearbyAdapter
 import com.example.bahadir_eray_bootcampfinishproject.adapter.TopDestinationsAdapter
+import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentSearchBinding
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.SearchViewModel
 
 
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(), TopDestinationsAdapter.Listener, NearbyAdapter.Listener {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
@@ -47,7 +49,10 @@ class SearchFragment : Fragment() {
                 binding.topRecyclerView.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.topRecyclerView.adapter =
-                    TopDestinationsAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
+                    TopDestinationsAdapter(
+                        viewModel.filtrelTravelsModel.value!!.toMutableList(),
+                        this
+                    )
             }
         })
     }
@@ -59,8 +64,36 @@ class SearchFragment : Fragment() {
                 binding.nearbyRecyclerView.layoutManager =
                     LinearLayoutManager(context)
                 binding.nearbyRecyclerView.adapter =
-                    NearbyAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList())
+                    NearbyAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList(), this)
             }
         })
+    }
+
+    override fun onItemTopClick(travelsModel: TravelsModel) {
+        view?.let {
+            val fragment = DetailFragment()
+            val bundle = Bundle()
+            bundle.putString("travelsCity", travelsModel.city)
+            bundle.putString("travelsImg", travelsModel.images?.first()?.url)
+            bundle.putString("travelsTitle", travelsModel.title)
+            bundle.putString("travelsDescription", travelsModel.description)
+            fragment.arguments = bundle
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
+        }
+    }
+
+    override fun onItemNearbyClick(travelsModel: TravelsModel) {
+        view?.let {
+            val fragment = DetailFragment()
+            val bundle = Bundle()
+            bundle.putString("travelsCity", travelsModel.city)
+            bundle.putString("travelsImg", travelsModel.images?.first()?.url)
+            bundle.putString("travelsTitle", travelsModel.title)
+            bundle.putString("travelsDescription", travelsModel.description)
+            fragment.arguments = bundle
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
+        }
     }
 }

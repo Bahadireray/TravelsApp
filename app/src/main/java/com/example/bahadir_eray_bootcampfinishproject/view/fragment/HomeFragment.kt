@@ -2,7 +2,6 @@ package com.example.bahadir_eray_bootcampfinishproject.view.fragment
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.R
 import com.example.bahadir_eray_bootcampfinishproject.adapter.DealsAdapter
 import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
@@ -38,6 +38,7 @@ class HomeFragment : Fragment(), DealsAdapter.Listener {
         viewModel.getDataFromAPI()
         observeLiveData()
         getAll()
+
 
         binding.allTxtView.setOnClickListener {
             binding.allTxtView.setTextColor(Color.parseColor("#ff0000"))
@@ -104,10 +105,9 @@ class HomeFragment : Fragment(), DealsAdapter.Listener {
 
     override fun onItemClick(travelsModel: TravelsModel) {
         view?.let {
-
             val fragment = DetailFragment()
             val bundle = Bundle()
-            bundle.putString("travelsID", travelsModel.id)
+            bundle.putString("travelsCity", travelsModel.city)
             bundle.putString("travelsImg", travelsModel.images?.first()?.url)
             bundle.putString("travelsTitle", travelsModel.title)
             bundle.putString("travelsDescription", travelsModel.description)

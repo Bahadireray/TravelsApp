@@ -9,9 +9,16 @@ import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastio
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class TopDestinationsAdapter(val travelList: MutableList<TravelsModel>) :
+class TopDestinationsAdapter(
+    val travelList: MutableList<TravelsModel>,
+    private val listener: Listener
+) :
     RecyclerView.Adapter<TopDestinationsAdapter.TopCountriesViewHolder>() {
     private lateinit var context: Context
+
+    interface Listener {
+        fun onItemTopClick(travelsModel: TravelsModel)
+    }
 
     class TopCountriesViewHolder(val topDestinastionItemBinding: TopDestinastionItemBinding) :
         RecyclerView.ViewHolder(topDestinastionItemBinding.root) {
@@ -26,11 +33,14 @@ class TopDestinationsAdapter(val travelList: MutableList<TravelsModel>) :
 
 
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
-        holder.topDestinastionItemBinding.imgTitle.text=travelList[position].title
+        holder.topDestinastionItemBinding.imgTitle.text = travelList[position].title
         holder.topDestinastionItemBinding.topImageItem.downloadFromUrl(
             travelList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
+        holder.itemView.setOnClickListener {
+            listener.onItemTopClick(travelList[position])
+        }
     }
 
 

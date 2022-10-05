@@ -35,7 +35,7 @@ class DealsAdapter(val travelsList: MutableList<TravelsModel>, private val liste
             placeholderProgressBar(holder.itemView.context)
         )
         holder.itemView.setOnClickListener {
-            listener.onItemClick(travelsList.get(position))
+            listener.onItemClick(travelsList[position])
         }
     }
 
