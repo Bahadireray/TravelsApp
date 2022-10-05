@@ -3,7 +3,9 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/home" />
+        android:icon="@drawable/home"
+        android:color="@color/red"
+         />
     <item
         android:id="@+id/searchFragment"
         android:icon="@drawable/search" />
