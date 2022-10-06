@@ -11,7 +11,6 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
 class DetailViewModel(application: Application) : BaseViewModel(application) {
-
     private lateinit var favoriDao: FavoriDao
     private lateinit var favoriDataBase: FavoriDataBase
     private val mDisposable = CompositeDisposable()
@@ -33,7 +32,6 @@ class DetailViewModel(application: Application) : BaseViewModel(application) {
     }
 
     private fun handleResponse() {
-
         Toast.makeText(getApplication(), "Kayıt Edildi", Toast.LENGTH_SHORT).show()
     }
 

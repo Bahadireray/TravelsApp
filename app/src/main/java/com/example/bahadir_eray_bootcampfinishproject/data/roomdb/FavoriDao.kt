@@ -10,15 +10,9 @@ import io.reactivex.rxjava3.core.Flowable
 
 @Dao
 interface FavoriDao {
-    /*
-        @Query("SELECT * FROM FavoriModel")
-        fun getFavoriId(): List<FavoriModel>
 
-
-     */
     @Query("SELECT * FROM FavoriModel")
     fun getFavoriAll(): Flowable<List<FavoriModel>>
-
 
     @Insert
     fun insert(favoriModel: FavoriModel): Completable

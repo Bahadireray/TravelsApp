@@ -1,16 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.BahadirErayBootcampFinishProject" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/homeTop</item>
-        <item name="colorPrimaryVariant">@color/homeTop</item>
-        <item name="colorOnPrimary">@color/homeTop</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/homeTop</item>
-        <item name="colorSecondaryVariant">@color/homeTop</item>
-        <item name="colorOnSecondary">@color/homeTop</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 </resources>
