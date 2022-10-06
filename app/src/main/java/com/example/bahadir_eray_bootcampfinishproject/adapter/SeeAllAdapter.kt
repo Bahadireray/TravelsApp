@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
+import com.example.bahadir_eray_bootcampfinishproject.databinding.SeeAllRowBinding
 import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastionItemBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
@@ -14,19 +15,21 @@ class SeeAllAdapter(val travelsList: MutableList<TravelsModel>, private val list
         fun onItemClick(travelsModel: TravelsModel)
     }
 
-    class SeeAllViewHolder(val seeAllview: TopDestinastionItemBinding) :
-        RecyclerView.ViewHolder(seeAllview.root) {
+    class SeeAllViewHolder(val view: SeeAllRowBinding) :
+        RecyclerView.ViewHolder(view.root) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeeAllViewHolder {
         val view =
-            TopDestinastionItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return SeeAllAdapter.SeeAllViewHolder(view)
+            SeeAllRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return SeeAllViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: SeeAllViewHolder, position: Int) {
-        holder.seeAllview.imgTitle.text = travelsList[position].title
-        holder.seeAllview.topImageItem.downloadFromUrl(
+        holder.view.seeAllTitle
+            .text = travelsList[position].title
+        holder.view.seeAllImg
+            .downloadFromUrl(
             travelsList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
