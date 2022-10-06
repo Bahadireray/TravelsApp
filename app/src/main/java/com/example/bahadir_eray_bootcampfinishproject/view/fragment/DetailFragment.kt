@@ -4,19 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.bahadir_eray_bootcampfinishproject.data.model.favori.FavoriModel
-import com.example.bahadir_eray_bootcampfinishproject.data.roomdb.FavoriDao
-import com.example.bahadir_eray_bootcampfinishproject.data.roomdb.FavoriDataBase
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentDetailBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.DetailViewModel
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 
 class DetailFragment : Fragment() {
     private var _binding: FragmentDetailBinding? = null
@@ -41,7 +35,7 @@ class DetailFragment : Fragment() {
         getDetailData()
 
         binding.addBookMark.setOnClickListener {
-            save(view)
+            save()
         }
     }
 
@@ -60,7 +54,7 @@ class DetailFragment : Fragment() {
         )
     }
 
-    private fun save(view: View) {
+    private fun save() {
         val args = this.arguments
         val inputTitle = args?.get("travelsTitle")
         val inputCity = args?.get("travelsCity")
@@ -72,7 +66,7 @@ class DetailFragment : Fragment() {
             inputImg.toString(),
             inputTitle.toString()
         )
-        viewModel.getDatabase(favoriModel)
-        binding.addBookMark.visibility=View.GONE
+        viewModel.saveDatabase(favoriModel)
+        binding.addBookMark.visibility = View.GONE
     }
 }

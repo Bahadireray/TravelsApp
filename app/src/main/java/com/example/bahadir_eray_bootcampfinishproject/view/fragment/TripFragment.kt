@@ -1,5 +1,6 @@
 package com.example.bahadir_eray_bootcampfinishproject.view.fragment
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -50,11 +51,33 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
         favoriDao = favoriDataBase.favoriDao()
        binding.bookmarkRecyclerView.visibility=View.GONE
         binding.bookmarLinearLayout.setOnClickListener {
-            binding.tripsListLinear.visibility = View.GONE
-            binding.bookmarkRecyclerView.visibility=View.VISIBLE
+            getViewBookMark()
             getDataSql()
         }
+        binding.tripsText.setOnClickListener {
+            getViewTrips()
+        }
 
+    }
+
+    fun getViewTrips() {
+        binding.bookmarkText.setTextColor(Color.parseColor("#808080"))
+        binding.tripsText.setTextColor(Color.parseColor("#ff0000"))
+        binding.tripsImg.setImageResource(R.drawable.trips_red)
+        binding.bookmarkImg.setImageResource(R.drawable.save)
+        binding.tripsListLinear.visibility = View.VISIBLE
+        binding.bookmarkRecyclerView.visibility = View.GONE
+        binding.addMarkTrips.visibility = View.VISIBLE
+    }
+
+    fun getViewBookMark() {
+        binding.bookmarkText.setTextColor(Color.parseColor("#ff0000"))
+        binding.tripsText.setTextColor(Color.parseColor("#808080"))
+        binding.tripsImg.setImageResource(R.drawable.trip)
+        binding.bookmarkImg.setImageResource(R.drawable.red_save)
+        binding.tripsListLinear.visibility = View.GONE
+        binding.bookmarkRecyclerView.visibility = View.VISIBLE
+        binding.addMarkTrips.visibility = View.GONE
     }
 
     fun getDataSql() {
@@ -85,5 +108,10 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
             val transaction = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mDisposable.clear()
     }
 }

@@ -15,7 +15,7 @@ class DetailViewModel(application: Application) : BaseViewModel(application) {
     private lateinit var favoriDataBase: FavoriDataBase
     private val mDisposable = CompositeDisposable()
 
-    fun getDatabase(favoriModel: FavoriModel) {
+    fun saveDatabase(favoriModel: FavoriModel) {
         favoriDataBase =
             Room.databaseBuilder(getApplication(), FavoriDataBase::class.java, "Favories")
                 .allowMainThreadQueries()
@@ -28,7 +28,6 @@ class DetailViewModel(application: Application) : BaseViewModel(application) {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::handleResponse)
         )
-
     }
 
     private fun handleResponse() {
