@@ -105,5 +105,19 @@
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/detailTitleText" />
 
+        <TextView
+            android:id="@+id/addBookMark"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="9dp"
+            android:background="@drawable/favori_background"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#000000"
+            android:textColorLink="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailsCardView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

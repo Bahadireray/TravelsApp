@@ -13,4 +13,5 @@
     <color name="homeTop">#094699</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bottomColor">#FF4760</color>
+    <color name="favColor">#FF4760</color>
 </resources>

@@ -9,7 +9,11 @@
         android:id="@+id/detailFragment"
         android:name="com.example.bahadir_eray_bootcampfinishproject.view.fragment.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_tripFragment"
+            app:destination="@id/tripFragment" />
+    </fragment>
     <fragment
         android:id="@+id/guideFragment"
         android:name="com.example.bahadir_eray_bootcampfinishproject.view.fragment.GuideFragment"
