@@ -40,6 +40,12 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
         observeLiveDataTopDestinations()
         observeLiveDataMightNeed()
         observeLiveDataCategori()
+        binding.seeAllTextView.setOnClickListener {
+            val fragment = SeeAllFragment()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
+
+        }
     }
 
     private fun observeLiveDataTopDestinations() {

@@ -49,13 +49,18 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
                 .allowMainThreadQueries()
                 .build()
         favoriDao = favoriDataBase.favoriDao()
-       binding.bookmarkRecyclerView.visibility=View.GONE
+        binding.bookmarkRecyclerView.visibility = View.GONE
         binding.bookmarLinearLayout.setOnClickListener {
             getViewBookMark()
             getDataSql()
         }
         binding.tripsText.setOnClickListener {
             getViewTrips()
+        }
+        binding.addMarkTrips.setOnClickListener {
+            val fragment = SearchFragment()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
         }
 
     }
@@ -64,7 +69,7 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
         binding.bookmarkText.setTextColor(Color.parseColor("#808080"))
         binding.tripsText.setTextColor(Color.parseColor("#ff0000"))
         binding.tripsImg.setImageResource(R.drawable.trips_red)
-        binding.bookmarkImg.setImageResource(R.drawable.save)
+        binding.bookmarkImg.setImageResource(R.drawable.addbok)
         binding.tripsListLinear.visibility = View.VISIBLE
         binding.bookmarkRecyclerView.visibility = View.GONE
         binding.addMarkTrips.visibility = View.VISIBLE
@@ -100,6 +105,7 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
         view?.let {
             val fragment = DetailFragment()
             val bundle = Bundle()
+            bundle.putString("save", "save")
             bundle.putString("travelsCity", favoriModel.city)
             bundle.putString("travelsImg", favoriModel.images)
             bundle.putString("travelsTitle", favoriModel.title)

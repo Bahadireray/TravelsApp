@@ -122,6 +122,7 @@
             android:lines="1"
             android:text="See all "
             android:textColor="#FF4760"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/mightRecyclerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.994"

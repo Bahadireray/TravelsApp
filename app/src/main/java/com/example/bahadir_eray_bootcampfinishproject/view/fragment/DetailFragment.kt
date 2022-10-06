@@ -33,9 +33,17 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel = ViewModelProviders.of(this).get(DetailViewModel::class.java)
         getDetailData()
-
-        binding.addBookMark.setOnClickListener {
-            save()
+        buttonResponse()
+    }
+    fun buttonResponse(){
+        val args = this.arguments
+        val inputSave = args?.get("save")
+        if (inputSave == "save") {
+            binding.addBookMark.visibility = View.GONE
+        } else {
+            binding.addBookMark.setOnClickListener {
+                save()
+            }
         }
     }
 

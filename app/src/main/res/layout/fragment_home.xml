@@ -243,6 +243,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/source_sans_pro_bold"
                 android:text="All"
                 android:textSize="16sp" />
 
@@ -251,6 +252,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/source_sans_pro_bold"
                 android:text="Flights"
                 android:textSize="16sp" />
 
@@ -259,6 +261,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/source_sans_pro_bold"
                 android:text="Hotels"
                 android:textSize="16sp" />
 
@@ -267,6 +270,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/source_sans_pro_bold"
                 android:text="Transportations"
                 android:textSize="16sp" />
         </LinearLayout>

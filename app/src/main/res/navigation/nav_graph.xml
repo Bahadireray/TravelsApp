@@ -50,4 +50,9 @@
             android:id="@+id/action_tripFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/seeAllFragment"
+        android:name="com.example.bahadir_eray_bootcampfinishproject.view.fragment.SeeAllFragment"
+        android:label="fragment_see_all"
+        tools:layout="@layout/fragment_see_all" />
 </navigation>

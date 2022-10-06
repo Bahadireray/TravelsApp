@@ -30,6 +30,7 @@ class HomeFragment : Fragment(), DealsAdapter.Listener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         viewModel.getDataFromAPI()
         observeLiveData()

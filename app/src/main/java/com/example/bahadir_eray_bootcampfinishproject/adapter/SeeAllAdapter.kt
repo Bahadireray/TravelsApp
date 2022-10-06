@@ -1,34 +1,32 @@
 package com.example.bahadir_eray_bootcampfinishproject.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
-import com.example.bahadir_eray_bootcampfinishproject.databinding.DealsItemsBinding
+import com.example.bahadir_eray_bootcampfinishproject.databinding.TopDestinastionItemBinding
 import com.example.bahadir_eray_bootcampfinishproject.util.downloadFromUrl
 import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBar
 
-class DealsAdapter(val travelsList: MutableList<TravelsModel>, private val listener: Listener) :
-    RecyclerView.Adapter<DealsAdapter.DealsViewHolder>() {
-
+class SeeAllAdapter(val travelsList: MutableList<TravelsModel>, private val listener: Listener) :
+    RecyclerView.Adapter<SeeAllAdapter.SeeAllViewHolder>() {
     interface Listener {
         fun onItemClick(travelsModel: TravelsModel)
     }
 
-    class DealsViewHolder(val dealsBinding: DealsItemsBinding) :
-        RecyclerView.ViewHolder(dealsBinding.root) {
-
+    class SeeAllViewHolder(val seeAllview: TopDestinastionItemBinding) :
+        RecyclerView.ViewHolder(seeAllview.root) {
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DealsViewHolder {
-        val dealsBinding =
-            DealsItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return DealsViewHolder(dealsBinding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeeAllViewHolder {
+        val view =
+            TopDestinastionItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return SeeAllAdapter.SeeAllViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: DealsViewHolder, position: Int) {
-        holder.dealsBinding.detalsImageItem.downloadFromUrl(
+    override fun onBindViewHolder(holder: SeeAllViewHolder, position: Int) {
+        holder.seeAllview.imgTitle.text = travelsList[position].title
+        holder.seeAllview.topImageItem.downloadFromUrl(
             travelsList[position].images?.first()?.url,
             placeholderProgressBar(holder.itemView.context)
         )
@@ -40,5 +38,4 @@ class DealsAdapter(val travelsList: MutableList<TravelsModel>, private val liste
     override fun getItemCount(): Int {
         return travelsList.count()
     }
-
 }
