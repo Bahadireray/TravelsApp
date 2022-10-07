@@ -17,7 +17,7 @@ class TripViewModel(application: Application) : BaseViewModel(application) {
 
     private lateinit var favoriDao: FavoriDao
     private lateinit var favoriDataBase: FavoriDataBase
-    private val mDisposable = CompositeDisposable()
+    private val disposable = CompositeDisposable()
     private lateinit var bookmarkAdapter: BookmarkAdapter
     private lateinit var favoriList: List<FavoriModel>
 
@@ -34,6 +34,6 @@ class TripViewModel(application: Application) : BaseViewModel(application) {
 
     override fun onCleared() {
         super.onCleared()
-        mDisposable.clear()
+        disposable.clear()
     }
 }

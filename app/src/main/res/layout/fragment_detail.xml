@@ -51,21 +51,21 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="145dp"
+            android:layout_height="180dp"
             android:layout_margin="1dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="80dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detailCiytText"
-            app:layout_constraintVertical_bias="0.215"
+            app:layout_constraintVertical_bias="0.088"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp">
+            tools:layout_editor_absoluteX="1dp">
 
             <TextView
                 android:id="@+id/detailDescriptiontext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
                 android:fontFamily="monospace"
                 android:padding="15dp"
