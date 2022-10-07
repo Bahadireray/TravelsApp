@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.bahadir_eray_bootcampfinishproject.data.model.favori.FavoriModel
@@ -34,12 +35,18 @@ class DetailFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(DetailViewModel::class.java)
         getDetailData()
         buttonResponse()
+        binding.addBookMarkSave.visibility = View.GONE
+        binding.addBookMarkSave.setOnClickListener {
+            Toast.makeText(context, "Tekrar Kayıt Edemezsiniz", Toast.LENGTH_SHORT).show()
+        }
     }
-    fun buttonResponse(){
+
+    fun buttonResponse() {
         val args = this.arguments
         val inputSave = args?.get("save")
         if (inputSave == "save") {
             binding.addBookMark.visibility = View.GONE
+            binding.addBookMarkSave.visibility = View.VISIBLE
         } else {
             binding.addBookMark.setOnClickListener {
                 save()
@@ -76,5 +83,6 @@ class DetailFragment : Fragment() {
         )
         viewModel.saveDatabase(favoriModel)
         binding.addBookMark.visibility = View.GONE
+        binding.addBookMarkSave.visibility = View.VISIBLE
     }
 }
