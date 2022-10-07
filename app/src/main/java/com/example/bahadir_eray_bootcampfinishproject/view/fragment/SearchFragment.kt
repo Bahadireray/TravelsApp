@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -14,11 +16,14 @@ import com.example.bahadir_eray_bootcampfinishproject.adapter.TopDestinationsAda
 import com.example.bahadir_eray_bootcampfinishproject.data.model.travel.TravelsModel
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentSearchBinding
 import com.example.bahadir_eray_bootcampfinishproject.viewmodel.SearchViewModel
+import java.util.*
 
 class SearchFragment : Fragment(), TopDestinationsAdapter.Listener, NearbyAdapter.Listener {
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: SearchViewModel
+    var disPlayList = ArrayList<TravelsModel>()
+    private lateinit var travelList: List<TravelsModel>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +33,7 @@ class SearchFragment : Fragment(), TopDestinationsAdapter.Listener, NearbyAdapte
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE or WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         _binding = FragmentSearchBinding.inflate(layoutInflater, container, false)
         val view = binding.root
         return view
@@ -38,6 +44,46 @@ class SearchFragment : Fragment(), TopDestinationsAdapter.Listener, NearbyAdapte
         viewModel.getDataFromAPI()
         observeLiveDataTopDestinations()
         observeLiveDataNearBy()
+
+        binding.searchEditText.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                observeLiveSearchData()
+                if (newText!!.isNotEmpty()) {
+                    disPlayList.clear()
+                    val search = newText.toLowerCase(Locale.getDefault())
+                    travelList.forEach {
+                        if (it.title.toLowerCase(Locale.getDefault()).contains(search)) {
+                            disPlayList.add(it)
+                        }
+                    }
+                    binding.ToptxtView.text = "All Search"
+                    binding.topRecyclerView.adapter!!.notifyDataSetChanged()
+                } else {
+                    disPlayList.clear()
+                    disPlayList.addAll(travelList)
+                    binding.topRecyclerView.adapter!!.notifyDataSetChanged()
+                    binding.ToptxtView.text = "TOP DESTINATIONS"
+                }
+                return true
+            }
+        })
+    }
+
+    private fun observeLiveSearchData() {
+        viewModel.travelsModel.observe(viewLifecycleOwner, Observer { travels ->
+            travels?.let {
+                viewModel.setFilter("all")
+                travelList = viewModel.filtrelTravelsModel.value!!.toMutableList()
+                binding.topRecyclerView.layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                binding.topRecyclerView.adapter =
+                    TopDestinationsAdapter(disPlayList, this@SearchFragment)
+            }
+        })
     }
 
     private fun observeLiveDataTopDestinations() {
