@@ -61,11 +61,9 @@ class SearchFragment : Fragment(), TopDestinationsAdapter.Listener, NearbyAdapte
                         }
                     }
                     binding.ToptxtView.text = "All Search"
-                    binding.topRecyclerView.adapter!!.notifyDataSetChanged()
                 } else {
                     disPlayList.clear()
                     disPlayList.addAll(travelList)
-                    binding.topRecyclerView.adapter!!.notifyDataSetChanged()
                     binding.ToptxtView.text = "TOP DESTINATIONS"
                 }
                 return true

@@ -51,6 +51,7 @@
                 android:text="Trips"
                 android:textColor="#FF4760"
                 android:textSize="20sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -84,6 +85,7 @@
                 android:text="Bookmark"
                 android:textColor="#808080"
                 android:textSize="20sp" />
+
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -186,6 +188,7 @@
                         android:text="5 items"
                         android:textColor="#FCFCFD"
                         android:textSize="16sp" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -217,9 +220,11 @@
                         android:textColor="#FCFCFD"
                         android:textSize="14sp"
                         android:textStyle="bold" />
+
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
 
         <TextView
@@ -240,4 +245,5 @@
             app:layout_constraintVertical_bias="0.949" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

@@ -8,7 +8,6 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import kotlinx.coroutines.launch
 
 class TripViewModel(application: Application) : BaseViewModel(application) {
-
     private lateinit var favoriDao: FavoriDao
     private lateinit var favoriDataBase: FavoriDataBase
     private val mDisposable = CompositeDisposable()

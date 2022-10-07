@@ -27,6 +27,7 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
     private lateinit var favoriDao: FavoriDao
     private lateinit var favoriDataBase: FavoriDataBase
     private val mDisposable = CompositeDisposable()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -60,8 +61,6 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
             val transaction = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
         }
-
-
     }
 
     fun getViewTrips() {

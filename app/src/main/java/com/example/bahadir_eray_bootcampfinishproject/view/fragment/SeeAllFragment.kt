@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.bahadir_eray_bootcampfinishproject.R
 import com.example.bahadir_eray_bootcampfinishproject.adapter.SeeAllAdapter
@@ -38,7 +37,6 @@ class SeeAllFragment : Fragment(), SeeAllAdapter.Listener {
         viewModel = ViewModelProviders.of(this).get(SeeAllViewModel::class.java)
         viewModel.getDataFromAPI()
         observeLiveData()
-
     }
 
     private fun observeLiveData() {
@@ -47,7 +45,7 @@ class SeeAllFragment : Fragment(), SeeAllAdapter.Listener {
                 viewModel.setFilter("all")
                 binding.seeAllRecyclerView
                     .layoutManager =
-                    StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+                    StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
                 binding.seeAllRecyclerView.adapter =
                     SeeAllAdapter(viewModel.filtrelTravelsModel.value!!.toMutableList(), this)
             }
