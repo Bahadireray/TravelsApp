@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.bahadir_eray_bootcampfinishproject.data.model.favori.FavoriModel
@@ -35,9 +34,11 @@ class DetailFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(DetailViewModel::class.java)
         getDetailData()
         buttonResponse()
-        binding.addBookMarkSave.visibility = View.GONE
+        binding.addBookMark.setOnClickListener {
+            save()
+        }
         binding.addBookMarkSave.setOnClickListener {
-            Toast.makeText(context, "Tekrar Kayıt Edemezsiniz", Toast.LENGTH_SHORT).show()
+            delete()
         }
     }
 
@@ -48,9 +49,8 @@ class DetailFragment : Fragment() {
             binding.addBookMark.visibility = View.GONE
             binding.addBookMarkSave.visibility = View.VISIBLE
         } else {
-            binding.addBookMark.setOnClickListener {
-                save()
-            }
+            binding.addBookMark.visibility = View.VISIBLE
+            binding.addBookMarkSave.visibility = View.GONE
         }
     }
 
@@ -67,6 +67,26 @@ class DetailFragment : Fragment() {
             inputImg.toString(),
             placeholderProgressBar(requireActivity())
         )
+        binding.addBookMark.visibility = View.VISIBLE
+        binding.addBookMarkSave.visibility = View.GONE
+    }
+
+    private fun delete() {
+        val args = this.arguments
+        val inputTitle = args?.get("travelsTitle")
+        val inputCity = args?.get("travelsCity")
+        val inputImg = args?.get("travelsImg")
+        val inputDescription = args?.get("travelsDescription")
+        var favoriModel = FavoriModel(
+            inputCity.toString(),
+            inputDescription.toString(),
+            inputImg.toString(),
+            inputTitle.toString()
+        )
+        viewModel.deleteDataBase(favoriModel)
+
+        binding.addBookMark.visibility = View.VISIBLE
+        binding.addBookMarkSave.visibility = View.GONE
     }
 
     private fun save() {
@@ -82,6 +102,7 @@ class DetailFragment : Fragment() {
             inputTitle.toString()
         )
         viewModel.saveDatabase(favoriModel)
+
         binding.addBookMark.visibility = View.GONE
         binding.addBookMarkSave.visibility = View.VISIBLE
     }

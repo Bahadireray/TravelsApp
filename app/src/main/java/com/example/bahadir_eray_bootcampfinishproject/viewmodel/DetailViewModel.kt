@@ -7,9 +7,9 @@ import androidx.room.Room
 import com.example.bahadir_eray_bootcampfinishproject.data.model.favori.FavoriModel
 import com.example.bahadir_eray_bootcampfinishproject.data.roomdb.FavoriDao
 import com.example.bahadir_eray_bootcampfinishproject.data.roomdb.FavoriDataBase
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.launch
 
 class DetailViewModel(application: Application) : BaseViewModel(application) {
@@ -37,6 +37,29 @@ class DetailViewModel(application: Application) : BaseViewModel(application) {
             )
         }
     }
+
+    fun deleteDataBase(favoriModel: FavoriModel) {
+        launch {
+            favoriDataBase =
+                Room.databaseBuilder(getApplication(), FavoriDataBase::class.java, "Favories")
+                    .allowMainThreadQueries()
+                    .build()
+            favoriDao = favoriDataBase.favoriDao()
+
+            disposable.add(
+                favoriDao.delete(favoriModel)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({
+                        Toast.makeText(getApplication(), "Kayıt Silindi", Toast.LENGTH_SHORT).show()
+                    }, {
+                        Log.e("Error Detail GetData", it.message.toString())
+                    })
+            )
+        }
+    }
+
+
     override fun onCleared() {
         super.onCleared()
         disposable.clear()

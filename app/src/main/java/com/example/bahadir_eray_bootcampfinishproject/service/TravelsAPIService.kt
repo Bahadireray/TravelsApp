@@ -19,6 +19,4 @@ class TravelsAPIService {
     fun getData(): Single<List<TravelsModel>> {
         return api.getTravels()
     }
-
-
 }

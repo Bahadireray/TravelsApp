@@ -1,6 +1,5 @@
 package com.example.bahadir_eray_bootcampfinishproject.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +17,6 @@ class DealsAdapter(val travelsList: MutableList<TravelsModel>, private val liste
 
     class DealsViewHolder(val dealsBinding: DealsItemsBinding) :
         RecyclerView.ViewHolder(dealsBinding.root) {
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DealsViewHolder {
@@ -40,5 +38,4 @@ class DealsAdapter(val travelsList: MutableList<TravelsModel>, private val liste
     override fun getItemCount(): Int {
         return travelsList.count()
     }
-
 }

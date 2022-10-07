@@ -11,7 +11,6 @@ import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBa
 
 class NearbyAdapter(val travelsList: MutableList<TravelsModel>, private val listener: Listener) :
     RecyclerView.Adapter<NearbyAdapter.NearbyViewHolder>() {
-    private lateinit var context: Context
 
     interface Listener {
         fun onItemNearbyClick(travelsModel: TravelsModel)

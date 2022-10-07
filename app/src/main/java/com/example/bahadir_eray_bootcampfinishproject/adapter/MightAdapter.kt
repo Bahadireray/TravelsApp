@@ -11,7 +11,6 @@ import com.example.bahadir_eray_bootcampfinishproject.util.placeholderProgressBa
 
 class MightAdapter(val travelList: MutableList<TravelsModel>, private val listener: Listener) :
     RecyclerView.Adapter<MightAdapter.MightViewHolder>() {
-    private lateinit var context: Context
 
     interface Listener {
         fun onItemMightClick(travelsModel: TravelsModel)
@@ -19,7 +18,6 @@ class MightAdapter(val travelList: MutableList<TravelsModel>, private val listen
 
     class MightViewHolder(val view: MightNeedRowBinding) :
         RecyclerView.ViewHolder(view.root) {
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MightViewHolder {

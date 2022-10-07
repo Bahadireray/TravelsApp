@@ -10,7 +10,6 @@ class CategoriAdapter(val travelsList: MutableList<TravelsModel>) :
     RecyclerView.Adapter<CategoriAdapter.CategoriViewHolder>() {
 
     class CategoriViewHolder(val view: CategoriRowBinding) : RecyclerView.ViewHolder(view.root) {
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriViewHolder {
@@ -26,5 +25,4 @@ class CategoriAdapter(val travelsList: MutableList<TravelsModel>) :
     override fun getItemCount(): Int {
         return travelsList.count()
     }
-
 }

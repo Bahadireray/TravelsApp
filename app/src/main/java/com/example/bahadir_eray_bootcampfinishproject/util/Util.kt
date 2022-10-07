@@ -8,7 +8,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.bahadir_eray_bootcampfinishproject.R
 
 //Extension
-
 fun ImageView.downloadFromUrl(url: String?, progressDrawable: CircularProgressDrawable) {
 
     val options = RequestOptions()

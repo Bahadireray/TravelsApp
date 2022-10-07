@@ -46,6 +46,7 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
         observeLiveDataTopDestinations()
         observeLiveDataMightNeed()
         observeLiveDataCategori()
+
         binding.seeAllTextView.setOnClickListener {
             val fragment = SeeAllFragment()
             val transaction = fragmentManager?.beginTransaction()
@@ -67,11 +68,10 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
                         }
                     }
                     binding.mightTxtView.text = "All Search"
-                    binding.topPicRecyclerView.adapter!!.notifyDataSetChanged()
+
                 } else {
                     disPlayList.clear()
                     disPlayList.addAll(travelList)
-                    binding.topPicRecyclerView.adapter!!.notifyDataSetChanged()
                     binding.mightTxtView.text = "Might need these"
                 }
                 return true

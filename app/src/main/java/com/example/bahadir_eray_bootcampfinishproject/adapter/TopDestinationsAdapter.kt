@@ -1,6 +1,5 @@
 package com.example.bahadir_eray_bootcampfinishproject.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +13,6 @@ class TopDestinationsAdapter(
     private val listener: Listener
 ) :
     RecyclerView.Adapter<TopDestinationsAdapter.TopCountriesViewHolder>() {
-    private lateinit var context: Context
 
     interface Listener {
         fun onItemTopClick(travelsModel: TravelsModel)
@@ -30,7 +28,6 @@ class TopDestinationsAdapter(
             TopDestinastionItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TopCountriesViewHolder(topDestinastionItemBinding)
     }
-
 
     override fun onBindViewHolder(holder: TopCountriesViewHolder, position: Int) {
         holder.topDestinastionItemBinding.imgTitle.text = travelList[position].title
