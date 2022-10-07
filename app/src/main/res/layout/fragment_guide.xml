@@ -3,6 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.088"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,26 +52,24 @@
             android:layout_margin="10dp"
             android:orientation="horizontal"
             android:padding="5dp"
+            android:background="@drawable/search_corner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mightRecyclerView">
 
-            <EditText
-                android:id="@+id/guideSearchText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <android.widget.SearchView
+                android:id="@+id/searchText"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:iconifiedByDefault="true"
+                android:layout_alignParentRight="true"
+                android:animateLayoutChanges="true"
                 android:layout_weight="6"
-                android:ems="10"
-                android:hint="A country, a city, a place... or anything "
-                android:inputType="textPersonName" />
-
-            <ImageView
-                android:id="@+id/searchImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/search" />
+                android:searchIcon="@drawable/search_red"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -93,8 +100,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/topPicRecyclerView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="80dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -131,4 +138,5 @@
             app:layout_constraintVertical_bias="0.857" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>

@@ -54,7 +54,7 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
             getViewBookMark()
             getDataSql()
         }
-        binding.tripsText.setOnClickListener {
+        binding.tripLinearLayout.setOnClickListener {
             getViewTrips()
         }
         binding.addMarkTrips.setOnClickListener {
