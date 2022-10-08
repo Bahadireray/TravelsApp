@@ -1,5 +1,10 @@
 # Bahadir-Eray-BootcampFinishProject
-## Libraries and technologies used
+## About Application
+It is an application that makes travel sharing using a service over the Internet. 
+You can register new places and transportations in the application. 
+You can view the places you want to go from the search screen.
+
+## ->Libraries and technologies used
 * Navigation component : one activity contains multiple fragments instead of creating multiple activites.
 * Retrofit : HTTP connection with the rest API and convert Travels json file to Kotlin/Java object.
 * Room : Save Favori in local database.
@@ -10,12 +15,13 @@
 
 
 
+
+
 ---
 
-The file structure is set up like this
+### ->The file structure is set up like this
 
 ```
-.
 ├── adapter
 │      ├── BookmarkAdapter.kt
 │      ├── CategoriAdapter.kt
@@ -67,7 +73,7 @@ The file structure is set up like this
 
 ```
 
-### İmplementation Library
+### ->İmplementation Library
 
 ```
 def lifeCycleExtensionVersion = '1.1.1'
