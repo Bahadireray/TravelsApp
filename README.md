@@ -5,6 +5,9 @@ You can register new places and transportations in the application.
 You can view the places you want to go from the search screen.
 
 ![application_pages1](https://user-images.githubusercontent.com/57098047/194713072-cf3d1b1b-bc86-4571-9dfd-4a04cf5f095b.gif)
+###
+![applications_pages2](https://user-images.githubusercontent.com/57098047/194713737-abfdcb6f-a4ab-4fd8-8064-38a86b11158e.gif)
+
 
 
 ## ->Libraries and technologies used
