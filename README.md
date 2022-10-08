@@ -75,6 +75,11 @@ You can view the places you want to go from the search screen.
 
 ```
 
+### ->API Address Used
+```
+https://raw.githubusercontent.com/Bahadireray/ApiExample/main/projectApi.json
+```
+
 ### ->İmplementation Library
 
 ```
