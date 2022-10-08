@@ -53,7 +53,7 @@ You can view the places you want to go from the search screen. The application i
 ├── View
 │    ├────── Activity
 │    │           └── MainActivity.kt
-│    ├────── Fragment
+│    └────── Fragment
 │               ├── DetailFragment.kt
 │               ├── GuideFragment.kt
 │               ├── HomeFragment.kt
