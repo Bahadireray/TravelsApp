@@ -102,6 +102,7 @@ def lifeCycleExtensionVersion = '1.1.1'
     implementation "com.google.android.material:material:1.6.1"
     implementation "com.android.support:palette-v7:$supportVersion"
     implementation "com.android.support:design:$supportVersion"
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
@@ -113,7 +114,6 @@ def lifeCycleExtensionVersion = '1.1.1'
     implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
     implementation "androidx.room:room-rxjava3:$room_version"
     implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //Glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
