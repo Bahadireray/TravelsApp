@@ -4,6 +4,7 @@ It is an application that shares the trip using a service over the Internet.
 You can save new places and transports in the app.
 You can view the places you want to go from the search screen. The application is developed on version 'API 30' to implement existing libraries. Its handy design is adapted to the 5.7 inch screen.
 
+
 ![application_pages1](https://user-images.githubusercontent.com/57098047/194713072-cf3d1b1b-bc86-4571-9dfd-4a04cf5f095b.gif)
 ###
 ![applications_pages2](https://user-images.githubusercontent.com/57098047/194713737-abfdcb6f-a4ab-4fd8-8064-38a86b11158e.gif)
