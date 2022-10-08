@@ -60,11 +60,7 @@ You can view the places you want to go from the search screen. The application i
 │               ├── SearchFragment.kt
 │               ├── SeeAllFragment.kt
 │               └── TripFragment.kt
-│        ├── <Feature>Fragment.kt
-│        ├── <Feature>RecyclerviewAdapter.kt
-│        ├── <Feature>ViewModel.kt
-│        └── adapter
-│            └── ViewHolder.kt
+│
 └── Viewmodel
      ├── BaseViewModel.kt
      ├── DetailViewModel.kt
