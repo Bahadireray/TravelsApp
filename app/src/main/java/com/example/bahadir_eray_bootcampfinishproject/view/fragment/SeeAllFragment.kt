@@ -34,7 +34,7 @@ class SeeAllFragment : Fragment(), SeeAllAdapter.Listener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel = ViewModelProviders.of(this).get(SeeAllViewModel::class.java)
+        viewModel = ViewModelProviders.of(this)[SeeAllViewModel::class.java]
         viewModel.getDataFromAPI()
         observeLiveData()
     }

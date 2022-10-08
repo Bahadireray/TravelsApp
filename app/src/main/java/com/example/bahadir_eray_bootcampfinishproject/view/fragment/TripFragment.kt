@@ -42,20 +42,20 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel = ViewModelProviders.of(this).get(TripViewModel::class.java)
-        favoriDataBase =
-            Room.databaseBuilder(requireContext(), FavoriDataBase::class.java, "Favories")
-                .allowMainThreadQueries()
-                .build()
-        favoriDao = favoriDataBase.favoriDao()
+        viewModel = ViewModelProviders.of(this)[TripViewModel::class.java]
+        getDataBase()
+
         binding.bookmarkRecyclerView.visibility = View.GONE
+
         binding.bookmarLinearLayout.setOnClickListener {
             getViewBookMark()
             getDataSql()
         }
+
         binding.tripLinearLayout.setOnClickListener {
             getViewTrips()
         }
+
         binding.addMarkTrips.setOnClickListener {
             val fragment = SearchFragment()
             val transaction = fragmentManager?.beginTransaction()
@@ -63,7 +63,15 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
         }
     }
 
-    fun getViewTrips() {
+    private fun getDataBase(){
+        favoriDataBase =
+            Room.databaseBuilder(requireContext(), FavoriDataBase::class.java, "Favories")
+                .allowMainThreadQueries()
+                .build()
+        favoriDao = favoriDataBase.favoriDao()
+    }
+
+    private fun getViewTrips() {
         binding.bookmarkText.setTextColor(Color.parseColor("#808080"))
         binding.tripsText.setTextColor(Color.parseColor("#ff0000"))
         binding.tripsImg.setImageResource(R.drawable.trips_red)
@@ -73,7 +81,7 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
         binding.addMarkTrips.visibility = View.VISIBLE
     }
 
-    fun getViewBookMark() {
+    private fun getViewBookMark() {
         binding.bookmarkText.setTextColor(Color.parseColor("#ff0000"))
         binding.tripsText.setTextColor(Color.parseColor("#808080"))
         binding.tripsImg.setImageResource(R.drawable.trip)
@@ -83,7 +91,7 @@ class TripFragment : Fragment(), BookmarkAdapter.Listener {
         binding.addMarkTrips.visibility = View.GONE
     }
 
-    fun getDataSql() {
+    private fun getDataSql() {
         mDisposable.add(
             favoriDao.getFavoriAll()
                 .subscribeOn(Schedulers.io())

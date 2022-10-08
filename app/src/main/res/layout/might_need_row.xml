@@ -30,6 +30,7 @@
             android:id="@+id/mightTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro_bold"
             android:gravity="center"
             android:textColor="#FCFCFD"
             android:textSize="18sp"

@@ -30,6 +30,7 @@
             android:id="@+id/topTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro_bold"
             android:textColor="#0048F0"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
+            android:fontFamily="@font/source_sans_pro_bold"
             android:textColor="#181A25"
             android:textSize="18sp" />
     </LinearLayout>

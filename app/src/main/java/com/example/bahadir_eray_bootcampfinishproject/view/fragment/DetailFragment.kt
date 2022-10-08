@@ -31,9 +31,10 @@ class DetailFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel = ViewModelProviders.of(this).get(DetailViewModel::class.java)
+        viewModel = ViewModelProviders.of(this)[DetailViewModel::class.java]
         getDetailData()
         buttonResponse()
+
         binding.addBookMark.setOnClickListener {
             save()
         }
@@ -42,7 +43,7 @@ class DetailFragment : Fragment() {
         }
     }
 
-    fun buttonResponse() {
+    private fun buttonResponse() {
         val args = this.arguments
         val inputSave = args?.get("save")
         if (inputSave == "save") {
@@ -54,7 +55,7 @@ class DetailFragment : Fragment() {
         }
     }
 
-    fun getDetailData() {
+    private fun getDetailData() {
         val args = this.arguments
         val inputTitle = args?.get("travelsTitle")
         val inputCity = args?.get("travelsCity")

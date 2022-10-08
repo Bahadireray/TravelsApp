@@ -41,7 +41,7 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel = ViewModelProviders.of(this).get(GuideViewModel::class.java)
+        viewModel = ViewModelProviders.of(this)[GuideViewModel::class.java]
         viewModel.getDataFromAPI()
         observeLiveDataTopDestinations()
         observeLiveDataMightNeed()
@@ -52,7 +52,9 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
             val transaction = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.fragmentContainerView, fragment)?.commit()
         }
+
         binding.searchText.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
             }
@@ -72,6 +74,7 @@ class GuideFragment : Fragment(), MightAdapter.Listener, TopPicAdapter.Listener 
                 } else {
                     disPlayList.clear()
                     disPlayList.addAll(travelList)
+
                     binding.mightTxtView.text = "Might need these"
                 }
                 return true

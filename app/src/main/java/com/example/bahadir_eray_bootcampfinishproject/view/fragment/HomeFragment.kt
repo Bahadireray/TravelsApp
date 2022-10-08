@@ -31,7 +31,7 @@ class HomeFragment : Fragment(), DealsAdapter.Listener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProviders.of(this)[HomeViewModel::class.java]
         viewModel.getDataFromAPI()
         observeLiveData()
         getAllColor()
@@ -42,18 +42,21 @@ class HomeFragment : Fragment(), DealsAdapter.Listener {
             viewModel.setFilter("all")
             getAdapter()
         }
+
         binding.flighsTxtView.setOnClickListener {
             getDealsCategoriColor()
             binding.flighsTxtView.setTextColor(Color.parseColor("#ff0000"))
             viewModel.setFilter("flight")
             getAdapter()
         }
+
         binding.hotelsTxtView.setOnClickListener {
             getDealsCategoriColor()
             binding.hotelsTxtView.setTextColor(Color.parseColor("#ff0000"))
             viewModel.setFilter("hotel")
             getAdapter()
         }
+
         binding.transportationsTxtView.setOnClickListener {
             getDealsCategoriColor()
             binding.transportationsTxtView.setTextColor(Color.parseColor("#ff0000"))

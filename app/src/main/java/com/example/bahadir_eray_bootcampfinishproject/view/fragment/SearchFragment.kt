@@ -40,7 +40,7 @@ class SearchFragment : Fragment(), TopDestinationsAdapter.Listener, NearbyAdapte
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel = ViewModelProviders.of(this).get(SearchViewModel::class.java)
+        viewModel = ViewModelProviders.of(this)[SearchViewModel::class.java]
         viewModel.getDataFromAPI()
         observeLiveDataTopDestinations()
         observeLiveDataNearBy()
