@@ -16,7 +16,7 @@ You can view the places you want to go from the search screen.
 * Room : Save Favori in local database.
 * MVVM & LiveData : Saperate logic code from views and save the state in case the screen configuration changes.
 * Coroutines : do some code in the background.
-* view binding : instead of inflating views manually view binding will take care of that.
+* View Binding : instead of inflating views manually view binding will take care of that.
 * Glide : Catch images and load them in imageView.
 
 ---
