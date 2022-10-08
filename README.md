@@ -16,36 +16,55 @@ The file structure is set up like this
 
 ```
 .
-├── App.kt
-├── MainActivity.kt
+├── adapter
+│      ├── BookmarkAdapter.kt
+│      ├── CategoriAdapter.kt
+│      ├── DealsAdapter.kt
+│      ├── MightAdapter.kt
+│      ├── NearbyAdapter.kt
+│      ├── SeeAllAdapter.kt
+│      ├── TopDestinationsAdapter.kt
+│      └── TopPicAdapter.kt
 ├── data
-│    ├── Result.kt
-│    ├── Result.kt
-│    ├── network network
-│    │   └── <feature>api
-│    │       ├── <Feature>Service.kt
-│    │       └── response
-│    │           └── <Each>Response.kt
-│    └── repository
-│        └── RepositoryImpl.kt
-├── di
-│    ├── Module.kt
-│    └── qualifiers
-│        └── <Each>.kt
-├── domain
-│    ├── <Feature>UseCase.kt
-│    └── entities
-│        └── Entity<Each>.kt
-├── ui
-│    ├── BindingAdapters.kt
-│    └── <feature>
+│    ├────── Model
+│    │         ├── Favori
+│    │         │       └── FavoriModel.kt      
+│    │         └── Travel    
+│    │                 ├── TravelsImage.kt 
+│    │                 └── TravelsModel.kt
+│    └────── RoomDb
+│              ├── FavoriDao.kt
+│              └── FavoriDataBase.kt
+├── service
+│    ├── TravelsAPI.kt
+│    └── TravelsAPIService.kt
+│        
+├── Util
+│    └── Util.kt
+├── View
+│    ├────── Activity
+│    │           └── MainActivity.kt
+│    ├────── Fragment
+│               ├── DetailFragment.kt
+│               ├── GuideFragment.kt
+│               ├── HomeFragment.kt
+│               ├── SearchFragment.kt
+│               ├── SeeAllFragment.kt
+│               └── TripFragment.kt
 │        ├── <Feature>Fragment.kt
 │        ├── <Feature>RecyclerviewAdapter.kt
 │        ├── <Feature>ViewModel.kt
 │        └── adapter
 │            └── ViewHolder.kt
-└── util
-    └── Extensions.kt
+└── Viewmodel
+     ├── BaseViewModel.kt
+     ├── DetailViewModel.kt
+     ├── GuideViewModel.kt
+     ├── HomeViewModel.kt
+     ├── SearchViewModel.kt
+     ├── SeeAllViewModel.kt
+     └── TripViewModel.kt
+
 ```
 
 ### İmplementation Library
