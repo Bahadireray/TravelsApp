@@ -3,6 +3,8 @@
 It is an application that makes travel sharing using a service over the Internet. 
 You can register new places and transportations in the application. 
 You can view the places you want to go from the search screen.
+![application_pages1](https://user-images.githubusercontent.com/57098047/194713072-cf3d1b1b-bc86-4571-9dfd-4a04cf5f095b.gif)
+
 
 ## ->Libraries and technologies used
 * Navigation component : one activity contains multiple fragments instead of creating multiple activites.
@@ -12,10 +14,6 @@ You can view the places you want to go from the search screen.
 * Coroutines : do some code in the background.
 * view binding : instead of inflating views manually view binding will take care of that.
 * Glide : Catch images and load them in imageView.
-
-
-
-
 
 ---
 
