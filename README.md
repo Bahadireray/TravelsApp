@@ -135,6 +135,6 @@ def lifeCycleExtensionVersion = '1.1.1'
 
 ```
 ### ->My accounts where I share my work
- https://github.com/Bahadireray \n
- https://bahadireray.medium.com/ \n
- https://www.linkedin.com/in/bahadireray/
+ * https://github.com/Bahadireray 
+ * https://bahadireray.medium.com/ 
+ * https://www.linkedin.com/in/bahadireray/
