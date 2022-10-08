@@ -16,7 +16,7 @@
             android:layout_marginTop="25dp"
             android:layout_marginEnd="276dp"
             android:fontFamily="@font/source_sans_pro_bold"
-            android:text="Trip Plan"
+            android:text="@string/trip_Title"
             android:textColor="#292C3D"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/source_sans_pro_bold"
-                android:text="Trips"
+                android:text="@string/trips_text"
                 android:textColor="#FF4760"
                 android:textSize="20sp" />
 
@@ -82,7 +82,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/source_sans_pro_bold"
-                android:text="Bookmark"
+                android:text="@string/bookmark"
                 android:textColor="#808080"
                 android:textSize="20sp" />
 
@@ -134,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/source_sans_pro_bold"
-                    android:text="Ho Chi Minh City  "
+                    android:text="@string/tripCityText"
                     android:textColor="#FFFFFF"
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -149,7 +149,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/source_sans_pro_extralight"
-                    android:text="Wed, 29 Dec - 31 Dec "
+                    android:text="@string/tripDateText"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -171,7 +171,7 @@
                     app:layout_constraintStart_toStartOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/iconItems"
                         android:layout_width="13dp"
                         android:layout_height="13dp"
                         android:layout_marginTop="5dp"
@@ -179,13 +179,13 @@
                         app:srcCompat="@drawable/red_save" />
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/itemText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/source_sans_pro_bold"
-                        android:text="5 items"
+                        android:text="@string/item_text"
                         android:textColor="#FCFCFD"
                         android:textSize="16sp" />
 
@@ -203,7 +203,7 @@
                     app:layout_constraintStart_toEndOf="@+id/itemsLinearLayout">
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/iconDays"
                         android:layout_width="13dp"
                         android:layout_height="13dp"
                         android:layout_gravity="center"
@@ -211,12 +211,12 @@
                         app:srcCompat="@drawable/date_clock" />
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/daysText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-thin"
-                        android:text="5 days left "
+                        android:text="@string/days_text"
                         android:textColor="#FCFCFD"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -234,7 +234,7 @@
             android:layout_marginBottom="80dp"
             android:background="@drawable/favori_background"
             android:gravity="center"
-            android:text="+"
+            android:text="@string/plus"
             android:textColor="#FFFFFF"
             android:textColorLink="#FFFFFF"
             android:textSize="30sp"

@@ -40,7 +40,6 @@
             android:layout_marginTop="17dp"
             android:layout_marginEnd="25dp"
             android:fontFamily="monospace"
-            android:text="TextView"
             android:textColor="#0A2753"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -69,17 +68,16 @@
                 android:layout_marginEnd="10dp"
                 android:fontFamily="monospace"
                 android:padding="15dp"
-                android:text="TextView"
                 android:textColor="#39414B"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/iconLocation" />
         </androidx.core.widget.NestedScrollView>
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/iconLocation"
             android:layout_width="10dp"
             android:layout_height="15dp"
             android:layout_marginStart="50dp"
@@ -98,11 +96,10 @@
             android:layout_marginStart="-5dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="304dp"
-            android:text="TextView"
             android:textColor="#39414B"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/iconLocation"
             app:layout_constraintTop_toBottomOf="@+id/detailTitleText" />
 
         <ImageView

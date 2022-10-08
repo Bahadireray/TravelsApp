@@ -17,13 +17,13 @@
             tools:context=".view.fragment.SearchFragment">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/searchText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-25dp"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/source_sans_pro_bold"
-                android:text="Search"
+                android:text="@string/Search"
                 android:textColor="#000000"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:id="@+id/linearLayout2"
+                android:id="@+id/searchBarLinear"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="15dp"
@@ -44,13 +44,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.526"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView">
+                app:layout_constraintTop_toBottomOf="@+id/searchText">
 
                 <android.widget.SearchView
                     android:id="@+id/searchEditText"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
                     android:layout_weight="6"
                     android:animateLayoutChanges="true"
                     android:searchIcon="@drawable/search_red"
@@ -68,13 +67,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/source_sans_pro_bold"
-                android:text="TOP DESTINATIONS"
+                android:text="@string/top_destinations"
                 android:textColor="#292C3D"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+                app:layout_constraintStart_toStartOf="@+id/searchBarLinear"
+                app:layout_constraintTop_toBottomOf="@+id/searchBarLinear" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/topRecyclerView"
@@ -89,7 +88,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/ToptxtView" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/nearbyText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -97,7 +96,7 @@
                 android:layout_marginEnd="220dp"
                 android:layout_marginBottom="6dp"
                 android:fontFamily="@font/source_sans_pro_bold"
-                android:text="Nearby Attractions"
+                android:text="@string/nearby_text"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/nearbyRecyclerView"
@@ -109,7 +108,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/nearbyRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="322dp"
+                android:layout_height="304dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
@@ -118,7 +117,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                app:layout_constraintTop_toBottomOf="@+id/nearbyText" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

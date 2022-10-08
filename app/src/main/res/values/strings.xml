@@ -2,5 +2,29 @@
     <string name="app_name">Bahadir-Eray-BootcampFinishProject</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="where_s_your_n_next_destination">Where’s your \n next destination?</string>
+    <string name="home_page_text">Where’s your \n next destination?</string>
+    <string name="see_all">See all</string>
+    <string name="guideTextView">Guide</string>
+    <string name="mightTxtView">Might need these</string>
+    <string name="topPickarticlesTextView">Top-pick articles</string>
+    <string name="Flights">Flights</string>
+    <string name="Hotels">Hotels</string>
+    <string name="Cars">Cars</string>
+    <string name="Taxi">Taxi</string>
+    <string name="Deals">Deals</string>
+    <string name="Transportations">Transportations</string>
+    <string name="All">All</string>
+    <string name="Search">Search</string>
+    <string name="top_destinations">TOP DESTINATIONS</string>
+    <string name="nearby_text">Nearby Attractions</string>
+    <string name="trip_Title">Trip Plan</string>
+    <string name="trips_text">Trips</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="tripCityText">Ho Chi Minh City</string>
+    <string name="tripDateText">Wed, 29 Dec - 31 Dec</string>
+    <string name="item_text">5 items</string>
+    <string name="days_text">5 days left</string>
+    <string name="plus">+</string>
+    <string name="type">Type</string>
+    <string name="nearby">NEARBY</string>
 </resources>

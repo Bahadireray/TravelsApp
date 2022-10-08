@@ -27,7 +27,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="116dp"
             android:fontFamily="@font/source_sans_pro_bold"
-            android:text="@string/where_s_your_n_next_destination"
+            android:text="@string/home_page_text"
             android:textColor="#FFFFFF"
             android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="@+id/homeImageView"
@@ -52,7 +52,7 @@
             tools:ignore="MissingConstraints">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/taxiImg"
                 android:layout_width="30dp"
                 android:layout_height="27dp"
                 android:layout_margin="2dp"
@@ -83,7 +83,7 @@
             tools:ignore="MissingConstraints">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/carsImg"
                 android:layout_width="30dp"
                 android:layout_height="27dp"
                 android:layout_margin="2dp"
@@ -113,7 +113,7 @@
             tools:ignore="MissingConstraints">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/hotelsImg"
                 android:layout_width="30dp"
                 android:layout_height="27dp"
                 android:layout_margin="2dp"
@@ -164,7 +164,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-5dp"
             android:fontFamily="@font/source_sans_pro_bold"
-            android:text="Flights"
+            android:text="@string/Flights"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/homeImageView"
@@ -177,7 +177,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-5dp"
             android:fontFamily="@font/source_sans_pro_bold"
-            android:text="Hotels"
+            android:text="@string/Hotels"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/homeImageView"
@@ -191,7 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-5dp"
             android:fontFamily="@font/source_sans_pro_bold"
-            android:text="Cars"
+            android:text="@string/Cars"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/homeImageView"
@@ -204,7 +204,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-5dp"
             android:fontFamily="@font/source_sans_pro_bold"
-            android:text="Taxi"
+            android:text="@string/Taxi"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/homeImageView"
@@ -219,7 +219,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/source_sans_pro_bold"
-            android:text="Deals"
+            android:text="@string/Deals"
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -228,7 +228,7 @@
             app:layout_constraintTop_toBottomOf="@+id/homeImageView" />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/dealListTable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
@@ -244,7 +244,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/source_sans_pro_bold"
-                android:text="All"
+                android:text="@string/All"
                 android:textSize="16sp" />
 
             <TextView
@@ -253,7 +253,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/source_sans_pro_bold"
-                android:text="Flights"
+                android:text="@string/Flights"
                 android:textSize="16sp" />
 
             <TextView
@@ -262,7 +262,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/source_sans_pro_bold"
-                android:text="Hotels"
+                android:text="@string/Hotels"
                 android:textSize="16sp" />
 
             <TextView
@@ -271,7 +271,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/source_sans_pro_bold"
-                android:text="Transportations"
+                android:text="@string/Transportations"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -284,6 +284,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/dealListTable" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -57,7 +57,7 @@
             android:background="#FF4760"
             android:gravity="center"
             android:padding="1dp"
-            android:text="Type"
+            android:text="@string/type"
             android:textColor="#FCFCFD"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
