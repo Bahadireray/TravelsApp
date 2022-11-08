@@ -50,6 +50,8 @@ You can view the places you want to go from the search screen. The application i
 │        
 ├── Util
 │    └── Util.kt
+│    ├── Notification.kt
+│    └── Constants.kt
 ├── View
 │    ├────── Activity
 │    │           └── MainActivity.kt
