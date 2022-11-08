@@ -1,12 +1,19 @@
 package com.example.bahadir_eray_bootcampfinishproject.view.activity
 
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.work.*
 import com.example.bahadir_eray_bootcampfinishproject.R
 import com.example.bahadir_eray_bootcampfinishproject.databinding.ActivityMainBinding
 import com.example.bahadir_eray_bootcampfinishproject.databinding.FragmentHomeBinding
+import com.example.bahadir_eray_bootcampfinishproject.util.Notification
 import com.example.bahadir_eray_bootcampfinishproject.view.fragment.*
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         replaceFragment(HomeFragment())
+        travelsTimer()
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
@@ -40,5 +48,22 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainerView, fragment)
         fragmentTransaction.commit()
+    }
+
+    private fun travelsTimer() {
+        val constraints = Constraints.Builder()
+            .setRequiresCharging(false)
+            .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
+            .setRequiresCharging(false)
+            .setRequiresBatteryNotLow(true)
+            .build()
+        val myRequest = PeriodicWorkRequest.Builder(
+            Notification::class.java,
+            15,
+            TimeUnit.MINUTES
+        ).setConstraints(constraints)
+            .build()
+        WorkManager.getInstance(this)
+            .enqueue(myRequest)
     }
 }
