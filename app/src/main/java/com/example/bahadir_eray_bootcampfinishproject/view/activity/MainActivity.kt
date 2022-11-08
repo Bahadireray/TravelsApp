@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         replaceFragment(HomeFragment())
-        travelsTimer()
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
@@ -65,5 +64,10 @@ class MainActivity : AppCompatActivity() {
             .build()
         WorkManager.getInstance(this)
             .enqueue(myRequest)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        travelsTimer()
     }
 }
